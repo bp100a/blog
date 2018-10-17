@@ -16,7 +16,7 @@ jobs:
       - checkout
 
       - run:
-          name: run tests
+          name: make folders
           command: |
             . venv/bin/activate
             mkdir test-reports
