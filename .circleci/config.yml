@@ -16,13 +16,12 @@ jobs:
       - checkout
 
       - run:
+          name: install Hugo
+          command: sudo apt-get install hugo
+
+      - run:
           name: make folders
-          command: |
-            pwd
-            ls -al
-            ls venv/bin
-            . venv/bin/activate
-            mkdir test-reports
+          command: mkdir test-reports
 
       - store_artifacts:
           path: test-reports/
