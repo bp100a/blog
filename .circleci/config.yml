@@ -32,7 +32,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - add_ssh_keys
+      - add_ssh_keys:
           fingerprints:
             - "fc:24:63:d6:76:a1:4f:d5:c3:ef:f0:74:65:0b:e4:64"
       - run:
