@@ -18,6 +18,12 @@ jobs:
       - run:
           name: install Hugo
           command: sudo apt-get install hugo
+      - run:
+          name: generate Site
+          command: hugo
+      - run:
+          name: display generated Site
+          command: ls -al -R
 
       - run:
           name: make folders
