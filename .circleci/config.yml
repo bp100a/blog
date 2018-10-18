@@ -18,6 +18,9 @@ jobs:
       - run:
           name: make folders
           command: |
+            pwd
+            ls -al
+            ls venv/bin
             . venv/bin/activate
             mkdir test-reports
 
