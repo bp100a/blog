@@ -39,7 +39,7 @@ jobs:
             - "fc:24:63:d6:76:a1:4f:d5:c3:ef:f0:74:65:0b:e4:64"
       - run:
           name: install SSH clients
-          command: apt-get install openssh-client
+          command: sudo apt-get install openssh-client
       - run:
           name: Display Hugo Site
           command: ls -al
