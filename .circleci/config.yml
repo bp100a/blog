@@ -62,7 +62,7 @@ jobs:
           command: sudo apt-get install openssh-client
       - run:
           name: Display Hugo Site
-          command: ls -al
+          command: ls public -al
       - run:
           name: Access Raspberry Pi
           command: |
