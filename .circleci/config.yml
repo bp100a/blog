@@ -17,7 +17,9 @@ jobs:
 
       - run:
           name: install Hugo
-          command: sudo apt-get install hugo
+          command: |
+            sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49.2/hugo_0.49.2_Linux-64bit.deb
+            sudo dpkg -i hugo_0.49.2_Linux-64bit.deb
       - run:
           name: generate Site
           command: |
