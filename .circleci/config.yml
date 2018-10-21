@@ -69,6 +69,12 @@ jobs:
       - run:
           name: Display Hugo Site
           command: ls -al
+      - run:
+          name: Access Raspberry Pi
+          command: |
+            scp pi@$PIBLOG:/var/www/html/harrycollins/index.html .
+            ls -al
+
 
 workflows:
   version: 2
