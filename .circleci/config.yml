@@ -25,6 +25,8 @@ jobs:
             hugo version
             ls -al
             cat /etc/*-release
+            sed -i 's/baseurl = \"\"/baseurl = \"http:\/\/harrycollins.us\/\"/g' config.toml
+            cat config.toml
             hugo -v
       - run:
           name: display generated Site
