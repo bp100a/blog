@@ -20,7 +20,7 @@ jobs:
           command: sudo apt-get install hugo
       - run:
           name: generate Site
-          command: hugo
+          command: hugo -v
       - run:
           name: display generated Site
           command: ls -al -R
