@@ -24,6 +24,7 @@ jobs:
             pwd
             hugo version
             ls -al
+            cat /etc/*-release
             hugo -v
       - run:
           name: display generated Site
