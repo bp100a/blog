@@ -41,6 +41,19 @@ jobs:
 
       - store_test_results:
           path: public/
+      - run:
+          name: zip up generated Site
+          command: |
+             cd public
+             zip -r ../public.zip  *
+      - run:
+          name: stash zipfile as artifact
+          command: |
+             mkdir zipfile
+             mv public.zip zipfile/public.zip
+      - store_artifacts:
+          path: zipfile/
+
   deploy:
     docker:
       - image: circleci/python:3.7.0
