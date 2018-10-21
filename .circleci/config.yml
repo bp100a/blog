@@ -23,6 +23,7 @@ jobs:
           command: |
             pwd
             hugo version
+            ls -al
             hugo -v
       - run:
           name: display generated Site
