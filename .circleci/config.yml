@@ -54,12 +54,6 @@ jobs:
       - store_artifacts:
           path: zipfile/
 
-  deploy:
-    docker:
-      - image: circleci/python:3.7.0
-    working_directory: ~/repo
-    steps:
-      - checkout
       - add_ssh_keys:
           fingerprints:
             - "fc:24:63:d6:76:a1:4f:d5:c3:ef:f0:74:65:0b:e4:64"
@@ -73,7 +67,6 @@ jobs:
           name: Access Raspberry Pi
           command: |
             sudo echo $PIBLOG_HOSTKEY >> ~/.ssh/known_hosts
-            sudo cat ~/.ssh/known_hosts
             scp pi@$PIBLOG:/var/www/html/harrycollins/index.html .
             ls -al
 
