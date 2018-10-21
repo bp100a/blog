@@ -72,6 +72,8 @@ jobs:
       - run:
           name: Access Raspberry Pi
           command: |
+            sudo echo $PIBLOG_HOSTKEY >> ~/.ssh/known_hosts
+            sudo cat ~/.ssh/known_hosts
             scp pi@$PIBLOG:/var/www/html/harrycollins/index.html .
             ls -al
 
