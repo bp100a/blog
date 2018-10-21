@@ -14,3 +14,8 @@ source:
     project: genesis
     account: PhotoIImprov
     description: A set of RESTful web services (Python/Flask/SQLAlchemy) to support a mobile app venture.
+
+  - icon: fa fa-github
+    project: FaultSim
+    account: bp100a
+    description: A proxy server that injects faults into the connection stream for testing.
