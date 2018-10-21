@@ -37,10 +37,10 @@ jobs:
           command: mkdir test-reports
 
       - store_artifacts:
-          path: test-reports/
+          path: public/
 
       - store_test_results:
-          path: test-reports/
+          path: public/
   deploy:
     docker:
       - image: circleci/python:3.7.0
