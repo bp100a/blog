@@ -3,19 +3,29 @@ source:
   - icon: fa fa-github
     project: beerlister
     account: bp100a
-    description: An Alexa Skill that will read the taplist of select Northern NJ craft breweries.
+    description: An Alexa Skill that will read the taplist of select Northern NJ craft breweries. This codebase is fully CI/CD utilizing CircleCI. Runs for "free" on AWS Lambda services.
 
   - icon: fa fa-github
     project: sensorPi
     account: bp100a
-    description: A raspberry pi project to read and log temperatures. Historical data graphed with Google 
+    description: A raspberry pi project to read and log temperatures. Historical data graphed with Google charts. Utilizes an interface "hat" to connect DS18B20 temperature sensors.
 
   - icon: fa fa-github
     project: genesis
     account: PhotoIImprov
-    description: A set of RESTful web services (Python/Flask/SQLAlchemy) to support a mobile app venture.
+    description: A set of RESTful web services (Python/Flask/SQLAlchemy) to support a mobile app venture (Image Improv). The mobile side was written in Xamarin and supported both iOS & Android. Hosted on Google Cloud (GCE) using Cloud SQL and Cloud Store.
 
   - icon: fa fa-github
     project: FaultSim
     account: bp100a
-    description: A proxy server that injects faults into the connection stream for testing.
+    description: A proxy server that injects faults into the connection stream for testing. This has been very useful over the years as it also serves as a "middle man" for logging traffic between a client & server.
+
+  - icon: fa fa-github
+    project: blog
+    account: bp100a
+    description: This blog! This is a Hugo generated site, hosted on a Raspberry Pi 3 b+. I use CircleCI to build from gitHub and deploy to the pi via SSH keys. 
+
+  - icon: fa fa-github
+    project: LogicParser
+    account: bp100a
+    description: A logic parser. Basically parses & executes embedded logic strings to support conditional surveys. Striving for speed and simplicity. This was written in 2008, I had stepped away from hands-on programmer for awhile and wanted to tryout a simple (but useful) project that utilized TDD principles.
