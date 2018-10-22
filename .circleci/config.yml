@@ -14,7 +14,9 @@ jobs:
 
     steps:
       - checkout
-
+      - run: 
+          name: get submodule (theme)
+          command: git submodule update --init
       - run:
           name: install Hugo
           command: |
