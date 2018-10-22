@@ -7,7 +7,7 @@
     <meta name="author" content="Harry Collins" />
     <meta name="description" content="Musings of an Engineer">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Continuous Integration &amp; Deployment</title>
+    <title>Why your first job is very important</title>
     <meta name="generator" content="Hugo 0.49.2" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
@@ -57,46 +57,71 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="/blog/ci-cd/">Continuous Integration &amp; Deployment</a></strong>
+            <strong><a href="/blog/firstjob/">Why your first job is very important</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          October 17, 2018
+          April 2, 2013
             &nbsp;&nbsp;
+            
+            <span class="label label-success">development</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              
+              <p>I’m a serial hobbyist. One hobby I particularly liked was bee keeping. The basic beehive that you see virtually everywhere throughout the world was created by a Minister in Ohio. The design works so well it has little changed over the years. There are removable sections that contain the combs that the bees build out and fill with honey. The key to getting the bees to build the combs exactly how you want them to, hence making the work of maintaining the hive and extracting the honey far easier, is to provide a template embedded with the hexagonal pattern that the bees product. This ensures that the bees will make combs in the manner you want them to.</p>
 
-<h2 id="getting-started">Getting Started</h2>
+<p>When you are looking for your first engineering job you need to make sure that the people you are going to be working with provide you with a suitable template for building your engineering talents and discipline. This pattern is critical in ensuring you won’t develop bad habits that will difficult to overcome.</p>
 
-<p>I&rsquo;ve been working on testing the boundaries of Continues Integration &amp; Deployment with a simple project of my, the Alexa Jersey Beers Skill.</p>
+<p>Too many new graduates are focused on starting salary, or specifics of projects. Your real focus should be on who and the how. Who will you be working with? How do they do their work? When looking at the who, consider the backgrounds of the people you will be working with, what companies did they work for? What is their track record for delivering solutions?  When considering the how, inquire as to what software methodology the company uses and why. If you hear the world agile, you need to ascertain if they are using it as a noun (meaning they are following the Agile Methodology), or if they are using it as a verb, often meaning there is no process but we work until we get the job done.  Run away from these companies! As tempting as it might be to work at a company that just gets down to the code and doesn’t let things like project plans and documentation paralyze their creativity, you are selling out your future ability to work in cooperative and coordinated environments by picking up a lot of bad habits that will be very hard to overcome later.</p>
 
-<p>I first tried out Jenkins, a friend of mine had been using it for work so I figured it would be a good start. While Jenkins works, I found it cumbersome to work with and difficult to get GitHub integration fully working. The more I read about Jenkins, the more it appears it is dated and needs a major overhaul.</p>
-
-<p>I then tried GitLabs. I really like the simplicity in how they integrated with GitHub, all the SSH access keys are automatically created. But once again, I had a lot of issues getting GitLabs to hear the GitHub events when checkins occurred.</p>
-
-<h2 id="circleci-baby">CircleCI Baby!</h2>
-
-<p>At this time I heard about CircleCI. Since I had two people I know using it in real production environments, I decided to give it a try. **CircleCI is awesome!</p>
-
-<p>First, CircleCI easily integrates with GitHub, just drop a .circleci folder in your projects root folder. Next, when you register your project with CircleCI you are given a skeletal config.yml file to place in the folder you just created, this is where CircleCI reads the instructions for how to build and deploy your project.</p>
-
-<p>CircleCI provides a rich set of Docker images to get you off the ground running, it&rsquo;s very easy to instantiation a VM with a complete Python x.x environment. Then you can tailor it to your needs by installing additional tools. And to keep things running efficiently, CircleCI will cache your configuration which greatly speeds up instance setup.</p>
-
-<p>Stash all your secrets (passwords, connections, etc.) in environment variables and setup some SSH keys. This information is not visible on admin screens once it has been entered, so hosting a config.yml file in a GitHub public repository does not leak secure information. In fact my Python project generates a config.py file from the environment variables, the one in GitHub is just a stub for testing.</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>Of course you can get the job done with any of the aforementioned tools, but I found CircleCI easy to use, flexible and well documented. I&rsquo;m using the cloud version of CircleCI (Jenkins was a local install), and I do most of my work from a Windows platform, so your mileage may vary.</p>
+<p>Today, the most exciting software projects to work on typically require multi-discipline teams that need to be coordinated towards a harmonious goal. This should not be confused with bureaucracy; design and planning are not bad words and will actually help you create better code and better products.</p>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 20, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/hugoonwindows/">Getting Started with Hugo on Windows</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        September 21, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/whyconsultants/">Why Use Consultants</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        February 25, 2012
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/writingtools/">If you think about writing a tool on a project â€“ write the tool!</a></strong>
+                      </h6>
+                    </div>
+                  </div>
                 
               </div>
             </div>

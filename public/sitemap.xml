@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/blog/hugoonwindows/</loc>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/blog/ci-cd/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/whyconsultants/</loc>
+    <lastmod>2017-09-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,28 +23,38 @@
   </url>
   
   <url>
-    <loc>/blog/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <loc>/blog/startupeasy/</loc>
+    <lastmod>2015-08-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>/blog/firstjob/</loc>
+    <lastmod>2013-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>/blog/writingtools/</loc>
+    <lastmod>2012-02-25T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/blog/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <loc>/blog/code4fun/</loc>
+    <lastmod>2011-11-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/fizzbuzz/</loc>
+    <lastmod>2010-12-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/needswdegree/</loc>
+    <lastmod>2009-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/blog/</loc>
-    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -45,43 +65,25 @@
   
   <url>
     <loc>/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/go/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/golang/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -98,20 +100,20 @@
   </url>
   
   <url>
+    <loc>/tags/startups/</loc>
+    <lastmod>2015-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/templates/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/themes/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>/tags/windows/</loc>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

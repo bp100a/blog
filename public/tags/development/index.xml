@@ -6,33 +6,75 @@
     <description>Recent content in Development on Harry Collins</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 02 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>(Hu)go Template Primer</title>
-      <link>/blog/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Getting Started with Hugo on Windows</title>
+      <link>/blog/hugoonwindows/</link>
+      <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
+      <guid>/blog/hugoonwindows/</guid>
+      <description>Step 1. Install Hugo I&amp;rsquo;m a lefty. This meant in high school when the gym teacher would demonstrate a technique for any sport, my instruction was basically &amp;ldquo;and if you&amp;rsquo;re lefthanded use the opposite hands&amp;rdquo;. Being a developer that likes to use Windows as my development platform feels a lot like those days. Most open source projects provide only cursory instructions on setting up their tools on Windows, and the amount of information out there in StackOverflow and other sites is similarly lacking.</description>
     </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>/blog/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Why Use Consultants</title>
+      <link>/blog/whyconsultants/</link>
+      <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>/blog/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>/blog/whyconsultants/</guid>
+      <description>##Why Use Consultants? This may seem like a strange question coming from someone who makes their living as a consultant, but why do companies use consultants? I think there are many answers to this question but they can be summed up into a generic statement � when they need resources or expertise that they don�t have.
+I know what you are saying �Duh! You�re just stating the obvious�. So let me elaborate.</description>
+    </item>
+    
+    <item>
+      <title>Why your first job is very important</title>
+      <link>/blog/firstjob/</link>
+      <pubDate>Tue, 02 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/firstjob/</guid>
+      <description>I�m a serial hobbyist. One hobby I particularly liked was bee keeping. The basic beehive that you see virtually everywhere throughout the world was created by a Minister in Ohio. The design works so well it has little changed over the years. There are removable sections that contain the combs that the bees build out and fill with honey. The key to getting the bees to build the combs exactly how you want them to, hence making the work of maintaining the hive and extracting the honey far easier, is to provide a template embedded with the hexagonal pattern that the bees product.</description>
+    </item>
+    
+    <item>
+      <title>If you think about writing a tool on a project – write the tool!</title>
+      <link>/blog/writingtools/</link>
+      <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/writingtools/</guid>
+      <description>Every project has a point where the team or team lead contemplates whether writing some tools would help the project. By tools I mean custom software not directly related to the solution deliverable. Sometimes these tools assist in generating code that is used in the project, other times they are just analysis tools to help you parse through gigabytes of log files looking for issues. And a tool can be a script or any other programmatic doohickey you come up with to help you in your day-to-day job of creating great software.</description>
+    </item>
+    
+    <item>
+      <title>All good developers write code for fun</title>
+      <link>/blog/code4fun/</link>
+      <pubDate>Wed, 23 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/code4fun/</guid>
+      <description>While looking for talent to help grow my consultant company, I went to a lot of career fairs. In my mind this is a great opportunity to meet budding developers fresh from their CS courses. The challenge I have (and all employers who come to these fairs) is how to differentiate the great developers from the masses. All the resumes look the same, and after a while all the students do as well.</description>
+    </item>
+    
+    <item>
+      <title>Fizz/Buzz Interview Question</title>
+      <link>/blog/fizzbuzz/</link>
+      <pubDate>Fri, 10 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/fizzbuzz/</guid>
+      <description>##The Fizz Buzz&amp;rdquo; interview question One of the hardest things about hiring people is determining who will be a good fit for the company. For development teams this can be narrowly defined as someone who can answer arcane questions regarding computer science. One the tests I have seen used by many companies is the infamous &amp;ldquo;Fizz Buzz&amp;rdquo; problem. This problem is basically defined as follows:
+ If a number is divisible by 3 print out &amp;ldquo;Fizz&amp;rdquo; If a number is divisible by 5 print out &amp;ldquo;Buzz&amp;rdquo; If a number is divisible by both 3 and 5, print out &amp;ldquo;Fizz Buzz&amp;rdquo; If a number is not divisible by either 3 or 5, then print out the number  There are variations but you get the idea.</description>
+    </item>
+    
+    <item>
+      <title>Why developers need a CS degree</title>
+      <link>/blog/needswdegree/</link>
+      <pubDate>Sun, 01 Mar 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/needswdegree/</guid>
+      <description>##Why developers need a CS degree Perhaps the most important part of my job at Netsoft was the identification and acquisition of talent. Finding high caliber people is hard, and particularly hard in Manhattan. Given the competition with the financial institutions for the top talent, there are days when I&amp;rsquo;d like to just give up.
+But all is not lost. One of the greatest recruiting tools I have at my disposal is that my company is a cool place to work.</description>
     </item>
     
   </channel>

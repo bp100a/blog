@@ -7,7 +7,7 @@
     <meta name="author" content="Harry Collins" />
     <meta name="description" content="Musings of an Engineer">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Continuous Integration &amp; Deployment</title>
+    <title>If you think about writing a tool on a project – write the tool!</title>
     <meta name="generator" content="Hugo 0.49.2" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
@@ -57,46 +57,69 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="/blog/ci-cd/">Continuous Integration &amp; Deployment</a></strong>
+            <strong><a href="/blog/writingtools/">If you think about writing a tool on a project – write the tool!</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          October 17, 2018
+          February 25, 2012
             &nbsp;&nbsp;
+            
+            <span class="label label-success">development</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              
+              <p>Every project has a point where the team or team lead contemplates whether writing some tools would help the project. By tools I mean custom software not directly related to the solution deliverable. Sometimes these tools assist in generating code that is used in the project, other times they are just analysis tools to help you parse through gigabytes of log files looking for issues. And a tool can be a script or any other programmatic doohickey you come up with to help you in your day-to-day job of creating great software.</p>
 
-<h2 id="getting-started">Getting Started</h2>
+<p>In all my years of programming, I have never been on a project where, when it was finished, we wondered why we wasted so much time and effort writing tools (or tests for that matter). I have been on many projects where I wished we spent time writing tools (and tests), and sometimes we are forced to revisit that decision after wasting tons of time.</p>
 
-<p>I&rsquo;ve been working on testing the boundaries of Continues Integration &amp; Deployment with a simple project of my, the Alexa Jersey Beers Skill.</p>
-
-<p>I first tried out Jenkins, a friend of mine had been using it for work so I figured it would be a good start. While Jenkins works, I found it cumbersome to work with and difficult to get GitHub integration fully working. The more I read about Jenkins, the more it appears it is dated and needs a major overhaul.</p>
-
-<p>I then tried GitLabs. I really like the simplicity in how they integrated with GitHub, all the SSH access keys are automatically created. But once again, I had a lot of issues getting GitLabs to hear the GitHub events when checkins occurred.</p>
-
-<h2 id="circleci-baby">CircleCI Baby!</h2>
-
-<p>At this time I heard about CircleCI. Since I had two people I know using it in real production environments, I decided to give it a try. **CircleCI is awesome!</p>
-
-<p>First, CircleCI easily integrates with GitHub, just drop a .circleci folder in your projects root folder. Next, when you register your project with CircleCI you are given a skeletal config.yml file to place in the folder you just created, this is where CircleCI reads the instructions for how to build and deploy your project.</p>
-
-<p>CircleCI provides a rich set of Docker images to get you off the ground running, it&rsquo;s very easy to instantiation a VM with a complete Python x.x environment. Then you can tailor it to your needs by installing additional tools. And to keep things running efficiently, CircleCI will cache your configuration which greatly speeds up instance setup.</p>
-
-<p>Stash all your secrets (passwords, connections, etc.) in environment variables and setup some SSH keys. This information is not visible on admin screens once it has been entered, so hosting a config.yml file in a GitHub public repository does not leak secure information. In fact my Python project generates a config.py file from the environment variables, the one in GitHub is just a stub for testing.</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>Of course you can get the job done with any of the aforementioned tools, but I found CircleCI easy to use, flexible and well documented. I&rsquo;m using the cloud version of CircleCI (Jenkins was a local install), and I do most of my work from a Windows platform, so your mileage may vary.</p>
+<p>So write the damn tool. I promise you won&rsquo;t regret it.</p>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 20, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/hugoonwindows/">Getting Started with Hugo on Windows</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        September 21, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/whyconsultants/">Why Use Consultants</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 2, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/firstjob/">Why your first job is very important</a></strong>
+                      </h6>
+                    </div>
+                  </div>
                 
               </div>
             </div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Startups on Harry Collins</title>
+    <link>/tags/startups/</link>
+    <description>Recent content in Startups on Harry Collins</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 13 Aug 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/startups/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Startups have it easy</title>
+      <link>/blog/startupeasy/</link>
+      <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/startupeasy/</guid>
+      <description>Okay, it can be hard starting a new company, but there&amp;rsquo;s one area where startups have significant advantages over other companies - employee motivation.
+Most of my career has been founding startup companies, my first startup was BluePoint Technologies (yes, we had more than one technology!), where we created font scaling chips. As the software industry matured I jumped ship to software development (trust me, most of hardware engineering is writing software), the second startup was PointCast, the creator of “push technology” (don&amp;rsquo;t get me started…).</description>
+    </item>
+    
+  </channel>
+</rss>

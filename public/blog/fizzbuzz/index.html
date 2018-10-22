@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Harry Collins" />
+    <meta name="description" content="Musings of an Engineer">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <title>Fizz/Buzz Interview Question</title>
+    <meta name="generator" content="Hugo 0.49.2" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=""><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/cv.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="/blog/fizzbuzz/">Fizz/Buzz Interview Question</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          December 10, 2010
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">development</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>##The Fizz Buzz&rdquo; interview question
+One of the hardest things about hiring people is determining who will be a good fit for the company. For development teams this can be narrowly defined as someone who can answer arcane questions regarding computer science. One the tests I have seen used by many companies is the infamous &ldquo;Fizz Buzz&rdquo; problem. This problem is basically defined as follows:</p>
+
+<ol>
+<li>If a number is divisible by 3 print out &ldquo;Fizz&rdquo;</li>
+<li>If a number is divisible by 5 print out &ldquo;Buzz&rdquo;</li>
+<li>If a number is divisible by both 3 and 5, print out &ldquo;Fizz Buzz&rdquo;</li>
+<li>If a number is not divisible by either 3 or 5, then print out the number</li>
+</ol>
+
+<p>There are variations but you get the idea. So what the interviewer is looking for is two things, first that the code will actually implement the above steps correctly, and secondly that the code will do so with the minimal code depth.</p>
+
+<p>The solution that is typically looked for is something like the following:</p>
+
+<pre><code class="language-javascript">void FizzBuzzTest(int num)
+{
+    if !( (num % 3) || (num % 5) )      // divisible by 3 &amp; 5?
+        printf (&quot;FizzBuzz&quot;)
+    else
+    {
+        if !(num %3) printf(&quot;Fizz&quot;) // divisible only by 3?
+        elseif !(num %5) printf(&quot;Buzz&quot;) // divisible only by 5?
+        else printf(&quot;%d&quot;, num);     // not divisible by either 3 or 5
+    }
+    
+}
+</code></pre>
+
+<p>This solution will get a poor grade because numbers not divisible by 3 and/or 5 will take 3 tests (3 if-statements) to make the determination, a more optimal solution would be:</p>
+
+<pre><code class="language-javascript">void BetterFizzBuzzTest(int num)
+{
+    if !(num%3) // divisible by 3?
+    {
+        if !(num%5) // also divisible by 5
+            printf(&quot;FizzBuzz);
+        else
+            printf(&quot;Fizz&quot;) // only divisible by 3
+    }
+    elseif !(num%5)
+        printf(&quot;Buzz&quot;);
+    else
+        printf(&quot;%d&quot;,num);
+
+}
+</code></pre>
+
+<p>The reason this code is &ldquo;better&rdquo; is that it only takes two if-statements to determine what to print out. So is there a way we can make this even better?</p>
+
+<pre><code class="language-c">void EvenBetterFizzBuzzTest(int num)
+{
+    if (!num%3 &amp;&amp; !num%5) // not divisible by 3 or 5, most common
+        printf(&quot;%d&quot;,i);
+    elseif(!num%3 &amp;&amp; num%5) // divisible only by 3, second most common
+        printf(&quot;Fizz&quot;)
+    elseif(!num%5)
+        printf(&quot;Buzz&quot;)  // divisible only by 5, third most common
+    else
+        printf(&quot;FizzBuzz&quot;)  // divisible by 3 and 5, least common
+    
+}
+</code></pre>
+
+<p>What&rsquo;s nice about this solution is that the most common pattern is performed in a single test. Knowing that for the inputs the system can expect (yes, I&rsquo;m assuming they are sufficiently randomized), we know that numbers not divisible by either 3 or 5 will be the majority, thus we can slant our solution to minimize the latency for inputs that are most frequent.
+Now I want to show one more solution to this problem that I think is better than all the others.</p>
+
+<pre><code class="language-c">void EvenBetterFizzBuzzTest(int num)
+{
+    if (!num%3 &amp;&amp; !num%5)
+        printf(&quot;%d&quot;,i);
+    if (!num%3 &amp;&amp; num%5)
+        printf(&quot;Fizz&quot;)
+    if (num%3 &amp;&amp; !num%5)
+        printf(&quot;Buzz&quot;)
+    if (!num%3 &amp;&amp; !num%5)
+        printf(&quot;FizzBuzz&quot;)  
+}
+</code></pre>
+
+<p>I have deliberately removed all comments. Looking at this code it is very easy to determine what the function does, it is very readable. But this code violates all the optimizations that we have performed in the prior solutions; it can take up to four if-statements to determine the output. So how could this possibly be better than the previous solution?</p>
+
+<p>For that answer we have to look at the evolution of compiler technology. Way back when I first got into programming,
+compilers were very dumb. In fact C compilers had keywords like register that allowed you to provide the hints the compiler would use to produce optimal code. Back in those days it was easy to re-write a function in assembly language that blew away anything the compiler could generate.</p>
+
+<p>That was then, this is now. Both compilers and processors have made tremendous advances. What we want to do is provide the compiler with as much information about what we intend to do so it can determine the optimal execution code to accomplish our goal. By hand-optimizing the solution we remove information that the compiler could use to produce better code. Don&rsquo;t confuse this optimization with algorithmic optimization, you should still work to optimize the algorithms, a compiler can only optimize the code based on the perceived intent, it cannot create a new solution (notice I left the test for the most common case at the start of the method).</p>
+
+<p>So today&rsquo;s processors have multiple execution units and tons of registers. They also are paired with advance compilers that incorporate scads of optimization algorithms. And they are getting better all the time.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 20, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/hugoonwindows/">Getting Started with Hugo on Windows</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        September 21, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/whyconsultants/">Why Use Consultants</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 2, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/firstjob/">Why your first job is very important</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/ie10-viewport-bug-workaround.js"></script><!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+  </body>
+</html>

@@ -7,7 +7,7 @@
     <meta name="author" content="Harry Collins" />
     <meta name="description" content="Musings of an Engineer">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Continuous Integration &amp; Deployment</title>
+    <title>Why Use Consultants</title>
     <meta name="generator" content="Hugo 0.49.2" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css" /><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow.min.css">
@@ -57,46 +57,70 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="/blog/ci-cd/">Continuous Integration &amp; Deployment</a></strong>
+            <strong><a href="/blog/whyconsultants/">Why Use Consultants</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          October 17, 2018
+          September 21, 2017
             &nbsp;&nbsp;
+            
+            <span class="label label-success">development</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              
+              <p>##Why Use Consultants?
+This may seem like a strange question coming from someone who makes their living as a consultant, but why do companies use consultants? I think there are many answers to this question but they can be summed up into a generic statement – when they need resources or expertise that they don’t have.</p>
 
-<h2 id="getting-started">Getting Started</h2>
+<p>I know what you are saying “Duh! You’re just stating the obvious”. So let me elaborate. Back in the day when I was founding startups (BluePoint, PointCast, PrizePoint/Uproar) I ran development departments, heck I did a lot of the development myself. I would never have envisioned a scenario where I would look outside my own team for technical expertise. If there was something we didn’t know, we learned it, that way we captured the knowledge within the team and created value as an organization. The one time that I did reach out to consultants, while anxiously preparing to bring our first website based on Microsoft’s relatively new ASP (yes the VBScript stuff!) online to service what we thought would be millions and millions of users, I tapped one of the big consulting firms to assuage my business partner’s concerns. What I got were half-dozen junior engineers that regurgitated MSDN articles from the web, there was no “ASP master” that I was looking for to be found, and every scrap of information they provided I had already seen myself. They couldn’t answer any of the questions I had and it was clear they were clueless. This was all costing the company $200 per hour per consultant, and I wasn’t getting any value.</p>
 
-<p>I&rsquo;ve been working on testing the boundaries of Continues Integration &amp; Deployment with a simple project of my, the Alexa Jersey Beers Skill.</p>
-
-<p>I first tried out Jenkins, a friend of mine had been using it for work so I figured it would be a good start. While Jenkins works, I found it cumbersome to work with and difficult to get GitHub integration fully working. The more I read about Jenkins, the more it appears it is dated and needs a major overhaul.</p>
-
-<p>I then tried GitLabs. I really like the simplicity in how they integrated with GitHub, all the SSH access keys are automatically created. But once again, I had a lot of issues getting GitLabs to hear the GitHub events when checkins occurred.</p>
-
-<h2 id="circleci-baby">CircleCI Baby!</h2>
-
-<p>At this time I heard about CircleCI. Since I had two people I know using it in real production environments, I decided to give it a try. **CircleCI is awesome!</p>
-
-<p>First, CircleCI easily integrates with GitHub, just drop a .circleci folder in your projects root folder. Next, when you register your project with CircleCI you are given a skeletal config.yml file to place in the folder you just created, this is where CircleCI reads the instructions for how to build and deploy your project.</p>
-
-<p>CircleCI provides a rich set of Docker images to get you off the ground running, it&rsquo;s very easy to instantiation a VM with a complete Python x.x environment. Then you can tailor it to your needs by installing additional tools. And to keep things running efficiently, CircleCI will cache your configuration which greatly speeds up instance setup.</p>
-
-<p>Stash all your secrets (passwords, connections, etc.) in environment variables and setup some SSH keys. This information is not visible on admin screens once it has been entered, so hosting a config.yml file in a GitHub public repository does not leak secure information. In fact my Python project generates a config.py file from the environment variables, the one in GitHub is just a stub for testing.</p>
-
-<h2 id="summary">Summary</h2>
-
-<p>Of course you can get the job done with any of the aforementioned tools, but I found CircleCI easy to use, flexible and well documented. I&rsquo;m using the cloud version of CircleCI (Jenkins was a local install), and I do most of my work from a Windows platform, so your mileage may vary.</p>
+<p>Needless to say my first experience with hiring consultants was disappointing and swore me off ever talking to consultants again, until a few years later I found myself working as a consultant.</p>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        October 20, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/hugoonwindows/">Getting Started with Hugo on Windows</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        April 2, 2013
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/firstjob/">Why your first job is very important</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        February 25, 2012
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/writingtools/">If you think about writing a tool on a project â€“ write the tool!</a></strong>
+                      </h6>
+                    </div>
+                  </div>
                 
               </div>
             </div>
