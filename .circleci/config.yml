@@ -21,6 +21,9 @@ jobs:
           name: new projects.html file
           command: |
              sudo cp ./static/projects.html ./themes/hugo-sustain/layouts/_default
+             rm ./static/projects.html
+             sudo cp ./static/harrycollins.html ./themes/hugo-sustain/layouts/index.html
+             rm ./static/harrycollins.html
       - run:
           name: install Hugo
           command: |

@@ -1,0 +1,21 @@
+{{ partial "head" . }}
+  <body>
+    <div id="wrap">
+      {{ partial "header" . }}
+      <section id="about">
+        <div class="container">
+        <div class="avatar">
+          <img class="img-circle" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
+        </div>
+        <h3>I'm <strong>{{ .Site.Params.author }}</strong>, a Software Engineering Manager.</h3>
+        <h3>I've been working in healthcare technology for 15 years.</h3>
+        <h3>Have a look at some of my <a href="{{ .Site.BaseURL }}projects/"> projects</a>.</h3>
+        <h3>For more details, check out my professional <a href="{{ .Site.BaseURL }}/cv.pdf">resume</a>.</h3>
+        <h3>Best contact for me is by <a href="mailto:{{ .Site.Params.Social.Email }}">email</a>.</h3>
+        {{ partial "social.html" . }}
+        </div>
+      </section>
+    </div>
+    {{ partial "footer" . }}
+  </body>
+</html>
