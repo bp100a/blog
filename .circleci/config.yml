@@ -18,6 +18,10 @@ jobs:
           name: get submodule (theme)
           command: git submodule update --init
       - run:
+          name: new projects.html file
+          command: |
+             sudo cp ./static/projects.html ./themes/hugo-sustain/layouts/_default
+      - run:
           name: install Hugo
           command: |
             sudo wget https://github.com/gohugoio/hugo/releases/download/v0.49.2/hugo_0.49.2_Linux-64bit.deb
