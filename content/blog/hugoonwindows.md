@@ -36,6 +36,6 @@ Now select Environment Variables
 ![alt test](/img/EnvironmentVariables.png)
 
 This will bring you to the environment variable editing dialog below
-![alt test](/img/EditEnvironmentVariables.png)
+![alt test](/img/EditEnvironmentVariable.png)
 
 Select the variable named "Path" and choose Edit. In the next screen you need to select "New" (as you are adding a new value to the variable) and enter the folder location where your hugo.exe resides. No trail slash or semi-colon. Save it all up and you are good to go. For added measure fire up a command prompt and type "hugo" to see it working.
