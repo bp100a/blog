@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.circleci",
     "\\content",
     "\\content\\blog",
-    "\\data"
+    "\\data",
+    "\\static",
+    "\\static\\img",
+    "\\themes",
+    "\\themes\\hugo-sustain\\archetypes",
+    "\\themes\\hugo-sustain\\layouts",
+    "\\themes\\hugo-sustain\\layouts\\_default"
   ],
+  "SelectedNode": "\\content\\blog\\hugoonwindows.md",
   "PreviewInSolutionExplorer": false
 }
