@@ -18,7 +18,7 @@ source:
   - icon: fa fa-github
     project: FaultSim
     account: bp100a
-    description: A proxy server that injects faults into the connection stream for testing. This has been very useful over the years as it also serves as a "middle man" for logging traffic between a client & server.
+    description: A proxy server that injects faults into the connection stream for testing. This has been very useful over the years as it also serves as a "middle man" for logging traffic between a client & server. This was written for PointCast back in 1995 and makes use of "I/O completion ports" to increase throughput (and just because they are cool).
 
   - icon: fa fa-github
     project: blog
