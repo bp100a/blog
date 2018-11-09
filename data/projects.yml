@@ -23,7 +23,7 @@ source:
   - icon: fa fa-github
     project: blog
     account: bp100a
-    description: This blog! This is a Hugo generated site, hosted on a Raspberry Pi 3 b+. I use CircleCI to build from gitHub and deploy to the pi via SSH keys. 
+    description: This blog! This is a Hugo generated site, hosted on a Raspberry Pi 3 b+. I use CircleCI to build from gitHub and deploy to the pi via SSH keys. It's freak'in awesome! I can edit content in Visual Studio, check it into github and it is automatically "checked" and securely deployed to my Raspberry Pi.
 
   - icon: fa fa-github
     project: LogicParser
