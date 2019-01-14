@@ -6,6 +6,11 @@ source:
     description: An Alexa Skill that will read the taplist of select Northern NJ craft breweries. This codebase is fully CI/CD utilizing CircleCI. Runs for "free" on AWS Lambda services.
 
   - icon: fa fa-github
+    project: JerseyTrains
+    account: bp100a
+    description: An Alexa Skill that find you the next NJTransit train to your destination. This is a work in progress, the NJTransit web api is unreliable. 
+
+  - icon: fa fa-github
     project: sensorPi
     account: bp100a
     description: A raspberry pi project to read and log temperatures. Historical data graphed with Google charts. Utilizes an interface "hat" to connect DS18B20 temperature sensors.
