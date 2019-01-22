@@ -1,0 +1,2500 @@
+{
+  "definitions": {
+    "Ballot": {
+      "properties": {
+        "bid": {
+          "description": "the ballot id, uniquely identifies the ballot this entry is associated with",
+          "type": "integer"
+        },
+        "image": {
+          "description": "base64 encoded string of JPEG image data",
+          "type": "string"
+        },
+        "likes": {
+          "description": "current number of likes for this photo",
+          "type": "integer"
+        },
+        "orientation": {
+          "description": "the EXIF orientation of photo (all should be 1!!)",
+          "enum": [
+            1
+          ],
+          "type": "integer"
+        },
+        "score": {
+          "description": "current score for this photo",
+          "type": "integer"
+        },
+        "tags": {
+          "description": "list of pre-defined tags user can select from",
+          "example": [
+            "Fluff",
+            "Square",
+            "Yellow",
+            "Old"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "votes": {
+          "description": "current number of votes for this photo",
+          "type": "integer"
+        }
+      }
+    },
+    "Ballots": {
+      "items": {
+        "$ref": "#/definitions/Ballot"
+      },
+      "type": "array"
+    },
+    "Category": {
+      "properties": {
+        "description": {
+          "description": "A brief description of the category",
+          "example": "Flowers",
+          "type": "string"
+        },
+        "end": {
+          "description": "When voting on this category ends",
+          "example": "2017-09-06 15:50",
+          "type": "string"
+        },
+        "id": {
+          "description": "category identifier",
+          "type": "integer"
+        },
+        "round": {
+          "description": "Which round of voting the category is in.",
+          "example": 1,
+          "type": "integer"
+        },
+        "start": {
+          "description": "When the category starts and uploading can begin, UTC time",
+          "example": "2017-09-03 13:50",
+          "type": "string"
+        },
+        "state": {
+          "description": "The current state of the category (VOTING, UPLOADING, CLOSED, etc.)",
+          "enum": [
+            "UPLOAD",
+            "VOTING",
+            "COUNTING",
+            "CLOSED",
+            "PENDING"
+          ],
+          "type": "string"
+        },
+        "upload_duration": {
+          "description": "how long uploading lasts in hours",
+          "example": 72,
+          "type": "integer"
+        },
+        "vote_duration": {
+          "description": "how long voting lasts in hours",
+          "example": 24,
+          "type": "integer"
+        }
+      }
+    },
+    "CategoryBallots": {
+      "properties": {
+        "ballots": {
+          "$ref": "#/definitions/Ballots"
+        },
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "pid": {
+          "description": "optional, returns the photo identifier that uniquetly identifies the photo just saved",
+          "type": "int"
+        }
+      }
+    },
+    "CategoryDetails": {
+      "properties": {
+        "description": {
+          "description": "the category's theme",
+          "type": "string"
+        },
+        "id": {
+          "description": "unique internal category identifier",
+          "type": "integer"
+        },
+        "num_photos": {
+          "description": "The total number of photos uploaded to this category",
+          "example": 132347,
+          "type": "integer"
+        },
+        "num_players": {
+          "description": "The number of unique players that have uploaded at least one photo to this category",
+          "example": 53,
+          "type": "integer"
+        },
+        "start_date": {
+          "description": "date & time category started, UTC, 24hour time",
+          "example": "2017-09-24 13:45",
+          "type": "string"
+        },
+        "state": {
+          "description": "The current state of the category (VOTING, UPLOADING, CLOSED, etc.)",
+          "enum": [
+            "UPLOAD",
+            "VOTING",
+            "COUNTING",
+            "CLOSED",
+            "PENDING"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "CategoryPhotos": {
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/Category"
+        },
+        "photos": {
+          "$ref": "#/definitions/PhotoDetails"
+        }
+      }
+    },
+    "Error": {
+      "properties": {
+        "msg": {
+          "description": "error message",
+          "type": "string"
+        }
+      }
+    },
+    "Event": {
+      "properties": {
+        "accesskey": {
+          "description": "key phrase used to join this event",
+          "example": "able move",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/Category"
+          },
+          "type": "array"
+        },
+        "created": {
+          "description": "date/time this event was created, UTC",
+          "example": "2017-09-04 14:25",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "the user that created this event, or 'me' if the user making this call",
+          "example": "someuser@gmail.com -or- Image Improv -or- me",
+          "type": "string"
+        },
+        "id": {
+          "description": "unique internal event identifier",
+          "example": 1347,
+          "type": "integer"
+        },
+        "max_players": {
+          "description": "maximum number of players allowed in event",
+          "example": 5,
+          "type": "integer"
+        },
+        "name": {
+          "description": "name of this event",
+          "example": "2017 Company Picnic",
+          "type": "string"
+        }
+      }
+    },
+    "EventDetails": {
+      "properties": {
+        "accesskey": {
+          "description": "key phrase used to join this event",
+          "example": "able move",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/CategoryDetails"
+          },
+          "type": "array"
+        },
+        "created": {
+          "description": "date/time this event was created, UTC",
+          "example": "2017-09-04 14:25",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "the user that created this event, or 'me' if the user making this call",
+          "example": "someuser@gmail.com -or- Image Improv -or- me",
+          "type": "string"
+        },
+        "id": {
+          "description": "unique internal event identifier",
+          "example": 1347,
+          "type": "integer"
+        },
+        "name": {
+          "description": "name of this event",
+          "example": "2017 Company Picnic",
+          "type": "string"
+        },
+        "num_players": {
+          "description": "number of players who have joined this event",
+          "example": 5,
+          "type": "integer"
+        }
+      }
+    },
+    "EventList": {
+      "properties": {
+        "events": {
+          "items": {
+            "$ref": "#/definitions/EventPhotos"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "EventPhotos": {
+      "properties": {
+        "accesskey": {
+          "description": "key phrase used to join this event",
+          "example": "able move",
+          "type": "string"
+        },
+        "categories": {
+          "items": {
+            "$ref": "#/definitions/CategoryPhotos"
+          },
+          "type": "array"
+        },
+        "created": {
+          "description": "date/time this event was created, UTC",
+          "example": "2017-09-04 14:25",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "the user that created this event, or 'me' if the user making this call",
+          "example": "someuser@gmail.com -or- Image Improv -or- me",
+          "type": "string"
+        },
+        "id": {
+          "description": "unique internal event identifier",
+          "example": 1347,
+          "type": "integer"
+        },
+        "max_players": {
+          "description": "maximum number of players allowed in event",
+          "example": 5,
+          "type": "integer"
+        },
+        "name": {
+          "description": "name of this event",
+          "example": "2017 Company Picnic",
+          "type": "string"
+        }
+      }
+    },
+    "LikeResp": {
+      "properties": {
+        "likes": {
+          "items": {
+            "$ref": "#/definitions/LikedPhotos"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "LikedPhotoDetail": {
+      "properties": {
+        "isfriend": {
+          "description": "=True, then this user has a friendship relationship with user requesting likes",
+          "type": "boolean"
+        },
+        "likes": {
+          "description": "number of likes photo has received",
+          "example": 4,
+          "type": "integer"
+        },
+        "pid": {
+          "description": "unique photo identifier",
+          "example": 1380547,
+          "type": "integer"
+        },
+        "score": {
+          "description": "The score this photo has accumulated",
+          "example": 7438,
+          "type": "integer"
+        },
+        "tags": {
+          "description": "List of tags associated with photo",
+          "example": [
+            "fluffy",
+            "colorful",
+            "rough",
+            "crude"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "url": {
+          "description": "URL to retrieve photo thumbnail .JPEG image, prefix baseURL and slash",
+          "example": "https://api.imageimprov.com/preview/537",
+          "type": "string"
+        },
+        "user": {
+          "description": "The email address of the user if available",
+          "example": "hcollins@gmail.com",
+          "type": "string"
+        },
+        "votes": {
+          "description": "number of votes photo has received",
+          "example": 3,
+          "type": "integer"
+        }
+      }
+    },
+    "LikedPhotos": {
+      "properties": {
+        "category": {
+          "$ref": "#definitions/Category"
+        },
+        "likedphotos": {
+          "items": {
+            "$ref": "#definitions/LikedPhotoDetail"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "PhotoDetail": {
+      "properties": {
+        "likes": {
+          "description": "number of likes photo has received",
+          "example": 4,
+          "type": "integer"
+        },
+        "pid": {
+          "description": "unique photo identifier",
+          "example": 1380547,
+          "type": "integer"
+        },
+        "score": {
+          "description": "The score this photo has accumulated",
+          "example": 7438,
+          "type": "integer"
+        },
+        "tags": {
+          "description": "List of tags associated with photo",
+          "example": [
+            "fluffy",
+            "colorful",
+            "rough",
+            "crude"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "url": {
+          "description": "URL to retrieve photo thumbnail .JPEG image, prefix baseURL and slash",
+          "example": "https://api.imageimprov.com/preview/537",
+          "type": "string"
+        },
+        "votes": {
+          "description": "number of votes photo has received",
+          "example": 3,
+          "type": "integer"
+        }
+      }
+    },
+    "PhotoDetails": {
+      "items": {
+        "$ref": "#/definitions/PhotoDetail"
+      },
+      "type": "array"
+    },
+    "PhotoInfo": {
+      "properties": {
+        "active": {
+          "description": "=True, record is active",
+          "type": "boolean"
+        },
+        "id": {
+          "description": "Photo Identifier",
+          "example": "27432",
+          "type": "integer"
+        },
+        "likes": {
+          "description": "# of likes this photo has",
+          "example": 3,
+          "type": "integer"
+        },
+        "offensive": {
+          "description": "indicates photo was deemed offensive (flagged)",
+          "type": "boolean"
+        }
+      }
+    },
+    "SubmissionResp": {
+      "properties": {
+        "submissions": {
+          "items": {
+            "$ref": "#/definitions/CategoryPhotos"
+          },
+          "type": "array"
+        },
+        "user": {
+          "$ref": "#/definitions/SubmissionUser"
+        }
+      }
+    },
+    "SubmissionUser": {
+      "properties": {
+        "created_date": {
+          "description": "date which this user account was created",
+          "example": "2017-09-23 12:47",
+          "type": "string"
+        },
+        "id": {
+          "description": "image improv user identifier",
+          "example": 24738,
+          "type": "integer"
+        }
+      }
+    },
+    "UserRewards": {
+      "properties": {
+        "highest_rated_photo": {
+          "description": "base URL to photo with highest rating",
+          "example": null,
+          "type": "string"
+        },
+        "max_daily_bulbs": {
+          "description": "highest number of bulbs won in a day",
+          "example": 14,
+          "type": "integer"
+        },
+        "tags": {
+          "description": "List of tags associated with highest rated photo",
+          "example": [
+            "fluffy",
+            "colorful",
+            "rough",
+            "crude"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "total_bulbs": {
+          "description": "total # of light bulbs the user has been awarded",
+          "example": 138,
+          "type": "integer"
+        },
+        "unspent_bulbs": {
+          "description": "# of light bulbs user hasn't spent",
+          "example": 3,
+          "type": "integer"
+        },
+        "upload100": {
+          "description": "Indicates the user has submitted photos for 100 consecutive days at some point",
+          "type": "boolean"
+        },
+        "upload30": {
+          "description": "Indicates the user has submitted photos for 30 consecutive days at some point",
+          "type": "boolean"
+        },
+        "upload7": {
+          "description": "Indicates the user has submitted photos for 7 consecutive days at some point",
+          "type": "boolean"
+        },
+        "vote100": {
+          "description": "Indicates the user has voted for 100 consecutive days at some point",
+          "type": "boolean"
+        },
+        "vote30": {
+          "description": "Indicates the user has voted for 30 consecutive days at some point",
+          "type": "boolean"
+        }
+      }
+    },
+    "auth_info": {
+      "properties": {
+        "access_token": {
+          "description": "JWT access token",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b3B0YWwuY29tIiwiZXhwIjoxNDI2NDIwODAwLCJodHRwOi8vdG9wdGFsLmNvbS9qd3RfY2xhaW1zL2lzX2FkbWluIjp0cnVlLCJjb21wYW55IjoiVG9wdGFsIiwiYXdlc29tZSI6dHJ1ZX0.yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw",
+          "type": "string"
+        },
+        "emailaddress": {
+          "description": "email address of user authenticated (if available)",
+          "example": "someuser@gmail.com",
+          "type": "string"
+        }
+      }
+    },
+    "auth_req": {
+      "properties": {
+        "password": {
+          "description": "clear text password",
+          "example": "mysecretpassw0rd!",
+          "type": "string"
+        },
+        "username": {
+          "description": "user to be authenticated",
+          "example": "someuser@gmail.com",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "ballotentry": {
+      "properties": {
+        "bid": {
+          "description": "ballot entry identifier",
+          "type": "integer"
+        },
+        "like": {
+          "description": "if present, indicates user liked the image",
+          "type": "string"
+        },
+        "offensive": {
+          "description": "If present, indicates user has found the image offensive",
+          "type": "string"
+        },
+        "tags": {
+          "description": "array of tags user has selected for the image",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "vote": {
+          "description": "ranking in ballot",
+          "type": "integer"
+        }
+      }
+    },
+    "base": {
+      "properties": {
+        "base": {
+          "type": "string"
+        }
+      }
+    },
+    "categories": {
+      "items": {
+        "$ref": "#/definitions/Category"
+      },
+      "type": "array"
+    },
+    "category": {
+      "items": {
+        "$ref": "#/definitions/Category"
+      },
+      "type": "string"
+    },
+    "category_create": {
+      "properties": {
+        "name": {
+          "description": "The theme/category name prompt for the photos being taken",
+          "example": "Round",
+          "type": "string"
+        },
+        "start_date": {
+          "description": "The starting date & time of the category, formatted RFC339 (YYYY-mm-DDTHH:MM:SS.mmmZ), UTC time",
+          "example": "2017-11-23T16:30:00.000Z",
+          "type": "string"
+        },
+        "upload": {
+          "description": "The duration, in hours, the category will accept photos",
+          "example": 24,
+          "type": "integer"
+        },
+        "voting": {
+          "description": "The duration, in hours, the category will accept voting after the upload period",
+          "example": 72,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "upload",
+        "voting",
+        "name"
+      ]
+    },
+    "category_state": {
+      "properties": {
+        "category_id": {
+          "example": 534,
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "type": "integer"
+        }
+      },
+      "required": [
+        "category_id",
+        "state"
+      ]
+    },
+    "create-event": {
+      "properties": {
+        "categories": {
+          "description": "themes to associate with this event",
+          "example": [
+            "Team",
+            "Fun",
+            "Beer"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "event_name": {
+          "description": "The name of the overarching event",
+          "example": "Company Picnic 2017",
+          "type": "string"
+        },
+        "games_excluded": {
+          "description": "games that are not included in this event",
+          "example": [
+            "MatchIt!",
+            "GuessWho?"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "num_players": {
+          "description": "# of players allowed in the event",
+          "example": 5,
+          "type": "integer"
+        },
+        "start_time": {
+          "description": "The UTC date/time when the event should start",
+          "example": "2017-09-03 15:30:00",
+          "type": "string"
+        },
+        "upload_duration": {
+          "description": "how long uploading should last in hours",
+          "example": 24,
+          "type": "integer"
+        },
+        "voting_duration": {
+          "description": "how long voting should last in hours",
+          "example": 72,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "event_name",
+        "num_players",
+        "start_time",
+        "upload_duration",
+        "voting_duration",
+        "categories"
+      ]
+    },
+    "download_image": {
+      "properties": {
+        "image": {
+          "description": "base64 encoded image file",
+          "type": "string"
+        }
+      }
+    },
+    "eventdetails": {
+      "items": {
+        "$ref": "#/definitions/EventDetails"
+      }
+    },
+    "events": {
+      "items": {
+        "$ref": "#/definitions/Event"
+      },
+      "type": "array"
+    },
+    "filename": {
+      "properties": {
+        "filename": {
+          "type": "string"
+        }
+      }
+    },
+    "friendreq": {
+      "properties": {
+        "request_id": {
+          "description": "identifier from friend request this is a response to",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "request_id"
+      ]
+    },
+    "ranking": {
+      "properties": {
+        "image": {
+          "description": "base64 encoded thumbnail image of entry",
+          "type": "string"
+        },
+        "isfriend": {
+          "description": "if set, then this rank is for a friend of yours",
+          "type": "string"
+        },
+        "likes": {
+          "description": "how many times this photo has been liked",
+          "example": 12,
+          "type": "integer"
+        },
+        "orientation": {
+          "description": "EXIF orientation of the image",
+          "enum": [
+            1,
+            8,
+            3,
+            6
+          ],
+          "type": "integer"
+        },
+        "pid": {
+          "description": "the identifying key for the photo",
+          "exampe": 54732,
+          "type": "integer"
+        },
+        "rank": {
+          "description": "overall rank in scoring",
+          "example": 3,
+          "type": "integer"
+        },
+        "score": {
+          "description": "actual score for this rank",
+          "example": 23775,
+          "type": "integer"
+        },
+        "username": {
+          "description": "username of member of this rank",
+          "example": "someuser@hotmail.com",
+          "type": "string"
+        },
+        "votes": {
+          "description": "how many times this photo has been voted on",
+          "example": 47,
+          "type": "integer"
+        },
+        "you": {
+          "description": "if set, then this rank is yours",
+          "type": "string"
+        }
+      }
+    },
+    "register_user": {
+      "properties": {
+        "guid": {
+          "description": "a UUID that uniquely identifies the user, in lieu of a username, this is their anonymous account handle",
+          "type": "string"
+        },
+        "password": {
+          "description": "password to log in user, special rules for anonymous users",
+          "type": "string"
+        },
+        "username": {
+          "description": "this is either a guid (anonymous registration) or an email address",
+          "type": "string"
+        }
+      },
+      "required": [
+        "username",
+        "password",
+        "guid"
+      ]
+    },
+    "req_a_friend": {
+      "properties": {
+        "friend": {
+          "description": "email address of friend to send request to",
+          "type": "string"
+        }
+      },
+      "required": [
+        "friend"
+      ]
+    },
+    "scores": {
+      "items": {
+        "$ref": "#/definitions/ranking"
+      },
+      "type": "array"
+    },
+    "upload_log": {
+      "properties": {
+        "msg": {
+          "description": "descriptive message of problem",
+          "type": "string"
+        }
+      },
+      "required": [
+        "msg"
+      ]
+    },
+    "upload_photo": {
+      "properties": {
+        "category_id": {
+          "description": "the category id of the current category accepting uploads",
+          "example": 543,
+          "type": "integer"
+        },
+        "extension": {
+          "description": "Extension/filetype of uploaded image",
+          "enum": [
+            "JPEG",
+            "JPG"
+          ],
+          "type": "string"
+        },
+        "image": {
+          "description": "Base64 encoded image",
+          "example": "R0lGODlhPQBEAPeoAJosM//AwO/AwHVYZ/z595kzAP/s7P+goOXMv8+fhw/v739/f+8PD98fH/8mJl+fn/9ZWb8/PzWlwv6wWGbImAPgTEMImIN9gUFCEm",
+          "type": "string"
+        },
+        "tags": {
+          "description": "List of tags associated with photo",
+          "example": [
+            "fluffy",
+            "colorful",
+            "rough",
+            "crude"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "category_id",
+        "extension",
+        "image"
+      ]
+    },
+    "upload_photometa": {
+      "properties": {
+        "flag": {
+          "description": "indicates the user things the image is offensive",
+          "type": "boolean"
+        },
+        "like": {
+          "description": "indicates user likes the image",
+          "type": "boolean"
+        },
+        "tags": {
+          "description": "list of strings user wants associated with image",
+          "example": [
+            "solid",
+            "round",
+            "square",
+            "fluffy"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      }
+    },
+    "user_reward": {
+      "items": {
+        "$ref": "#/definitions/UserRewards"
+      },
+      "type": "array"
+    },
+    "vote_args": {
+      "properties": {
+        "votes": {
+          "items": {
+            "$ref": "#/definitions/ballotentry"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "votes"
+      ]
+    }
+  },
+  "host": "api.imageimprov.com",
+  "info": {
+    "contact": {
+      "name": "apimaster@imageimprov.com"
+    },
+    "description": "The first version of the ImageImprov API is purely designed to interact with the ImageImprov mobile clients. We are aiming for a secure interface that will implement our needed features in a simple programming model\n\nAll endpoints are only accessible via https and are located at\n\n```api.imageimprov.com```\n\nUsers do not need to provide any information in order to enjoy our service, we fully support anonymous registration & play\n\n## Limits\nCurrently there are no limits on how many photos a user can upload to a single category.\n",
+    "title": "ImageImprov API",
+    "version": "1.9.6"
+  },
+  "paths": {
+    "/acceptfriendrequest": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Called to indicate a user has accepted a friend request",
+        "operationId": "accept-friendship",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/friendreq"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "friendship updated"
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error operating on category id specified",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Accept Friend Request",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/auth": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "JWT authentication",
+        "operationId": "jwt-auth",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "credentials",
+            "schema": {
+              "properties": {
+                "password": {
+                  "example": "mysecretpassword",
+                  "type": "string"
+                },
+                "username": {
+                  "example": "user@gmail.com",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "username",
+                "password"
+              ]
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "user authenticated",
+            "schema": {
+              "properties": {
+                "access_token": {
+                  "description": "JWT access token",
+                  "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0b3B0YWwuY29tIiwiZXhwIjoxNDI2NDIwODAwLCJodHRwOi8vdG9wdGFsLmNvbS9qd3RfY2xhaW1zL2lzX2FkbWluIjp0cnVlLCJjb21wYW55IjoiVG9wdGFsIiwiYXdlc29tZSI6dHJ1ZX0.yRQYnWzskCZUxPwaQupWkiUzKELZ49eM7oWxAQK_ZXw",
+                  "type": "string"
+                },
+                "email": {
+                  "example": "user@gmail.com",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "user authentication failed"
+          }
+        },
+        "summary": "JWT authentication",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/badges": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Returns rewards for this user",
+        "operationId": "my-badges",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of rewards for this user",
+            "schema": {
+              "$ref": "#/definitions/user_reward"
+            }
+          },
+          "204": {
+            "description": "no rewards/badges found for user"
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Badges",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/ballot": {
+      "get": {
+        "description": "A list of photos to be voted on, currently no more than 4",
+        "operationId": "get-ballot",
+        "parameters": [
+          {
+            "description": "The category we want to vote on. If not specified, a random category will be returned.",
+            "in": "query",
+            "name": "category_id",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of images to vote on with their originating category",
+            "schema": {
+              "$ref": "#/definitions/CategoryBallots"
+            }
+          },
+          "204": {
+            "description": "no categories to vote on!",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "403": {
+            "description": "no such user",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "no ballot",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get Ballot()",
+        "tags": [
+          "voting"
+        ]
+      }
+    },
+    "/base": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Tell the app where the Base URL is located for this session e.g https://api.imageimprov.com or http:/104.38.47.3:8080",
+        "operationId": "base_url",
+        "produces": [
+          "json/application"
+        ],
+        "responses": {
+          "200": {
+            "description": "base URL returned",
+            "schema": {
+              "$ref": "#/definitions/base"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Base URL",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/category": {
+      "get": {
+        "consumes": [
+          "text/plain"
+        ],
+        "description": "Return a list of categories that are not closed<br/>(PENDING, VOTING, UPLOAD & COUNTING). No categories associated<br/>with Events are returned, call /event service",
+        "operationId": "get-category",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "category list retrieved",
+            "schema": {
+              "$ref": "#/definitions/categories"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error retrieving categories",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Fetch Category",
+        "tags": [
+          "category"
+        ]
+      },
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Creates a category given the specified input parameters",
+        "operationId": "create-category",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "arguments",
+            "schema": {
+              "$ref": "#/definitions/category_create"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "category created",
+            "schema": {
+              "$ref": "#/definitions/Category"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error creating specified category",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create Category",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/config": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Simple page that checks some connections to make sure we are setup properly",
+        "operationId": "get-configuration",
+        "produces": [
+          "text/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "everything is running well"
+          },
+          "500": {
+            "description": "serious error dude",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "summary": "Configuration",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/cors_auth": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Same as the /auth endpoint but allows CORS (Cross Origin Resource Sharing)<br/>access to the authentication endpoint. Utilizes the callback registered in<br/>Flask-JWT.<br/>Note: Inputs determine what type of authentication to perfor: username/password, anonymous or oAuth2 service provider<br/>  1) If username is a hash of the password field, this is an anonymous user<br/>  2) If username is the name of a defined service provider, then the password is an oAuth2 token",
+        "operationId": "cors-auth",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cors-credentials",
+            "schema": {
+              "$ref": "#/definitions/auth_req"
+            }
+          }
+        ],
+        "produces": [
+          "applications/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "user has been authenticated",
+            "schema": {
+              "$ref": "#/definitions/auth_info"
+            }
+          },
+          "401": {
+            "description": "error authenticating user",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "summary": "CORS JWT Authentication",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/event": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "returns a list of active events this user is registered in",
+        "operationId": "event_status",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of active events for this user",
+            "schema": {
+              "$ref": "#/definitions/events"
+            }
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Event Status for User",
+        "tags": [
+          "category"
+        ]
+      }
+    },
+    "/event/{event_id}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "returns details for the specified event and all categories<br/>associated with it.",
+        "operationId": "event_details",
+        "parameters": [
+          {
+            "description": "Event identifier, uniquely identifies this event",
+            "in": "path",
+            "name": "event_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of active events for this user",
+            "schema": {
+              "$ref": "#/definitions/eventdetails"
+            }
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Event details",
+        "tags": [
+          "category"
+        ]
+      }
+    },
+    "/events/{dir}/{cid}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Retrieve a pageable list of photos in events this user has joined",
+        "operationId": "event-photos",
+        "parameters": [
+          {
+            "description": "next/prev direction from specified category id for next page",
+            "enum": [
+              "next",
+              "prev"
+            ],
+            "in": "path",
+            "name": "dir",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "category id to start fetch from, if 0 fetch start of category list",
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The number of categories to fetch in a single call, if not specified all will be fetched",
+            "in": "query",
+            "name": "num_categories",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "page of event photos",
+            "schema": {
+              "$ref": "#/definitions/EventList"
+            }
+          },
+          "404": {
+            "description": "image not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Event Photos",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/forgotpwd": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Send a reset password link to a user's email address, password is NOT changed",
+        "operationId": "forgot-password",
+        "parameters": [
+          {
+            "description": "The email address that has forgotten their password",
+            "in": "query",
+            "name": "email",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "json/application"
+        ],
+        "responses": {
+          "200": {
+            "description": "password reset link sent to email address"
+          },
+          "404": {
+            "description": "emailaddress not found!",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "summary": "Forgot Password",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/friendrequest": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Issue a friendship request, server will notify person to become a friend and join site if necessary",
+        "operationId": "tell-a-friend",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/req_a_friend"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Will notify friend"
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error requesting friendship",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Issue Friendship Request",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/image": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Download an image. If we have a filename, we can download the full image",
+        "operationId": "image-download",
+        "parameters": [
+          {
+            "description": "The filename you wish to retrieve",
+            "in": "query",
+            "name": "filename",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "image found",
+            "schema": {
+              "$ref": "#/definitions/download_image"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "photo not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Image Download",
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "/joinevent": {
+      "post": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "join an event (one or more categories) that was organized by another party",
+        "operationId": "join_event",
+        "parameters": [
+          {
+            "description": "string that uniquely identifies an event to join",
+            "in": "query",
+            "name": "accesskey",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "category list for event",
+            "schema": {
+              "$ref": "#/definitions/eventdetails"
+            }
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Join a Private Event",
+        "tags": [
+          "category"
+        ]
+      }
+    },
+    "/jpeg/{cid}": {
+      "post": {
+        "consumes": [
+          "image/jpeg"
+        ],
+        "description": "Upload a JPEG photo for the specified category",
+        "operationId": "jpeg",
+        "parameters": [
+          {
+            "description": "The category id to upload the photo to",
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of images to vote on for the category just uploaded to (if at least 50 images in category)",
+            "schema": {
+              "$ref": "#/definitions/CategoryBallots"
+            }
+          },
+          "201": {
+            "description": "The image was properly uploaded!",
+            "schema": {
+              "$ref": "#/definitions/filename"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error uploading image",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Upload Raw JPEG",
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "/lastsubmission": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "returns the last submission for this user",
+        "operationId": "last-submission",
+        "responses": {
+          "200": {
+            "description": "last submission found",
+            "schema": {
+              "$ref": "#/definitions/category"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "photo not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get Last Submission",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/leaderboard": {
+      "get": {
+        "description": "Returns a list of the top 10 photos as well as the caller's (so 11 in total)",
+        "operationId": "get-leaderboard",
+        "parameters": [
+          {
+            "description": "Category of the leaderboard being requested",
+            "in": "query",
+            "name": "category_id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "leaderboard retrieved",
+            "schema": {
+              "$ref": "#/definitions/scores"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error getting categories",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Get Leader Board",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/like/{dir}/{cid}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Returns a pageable list of photos that the user likes",
+        "operationId": "my-likes",
+        "parameters": [
+          {
+            "description": "next/prev direction from specified category id for next page",
+            "enum": [
+              "next",
+              "prev"
+            ],
+            "in": "path",
+            "name": "dir",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "when paging, indicates the first category-identifier to start fetching new page, non-inclusive",
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of photos that the user likes",
+            "schema": {
+              "$ref": "#/definitions/LikeResp"
+            }
+          },
+          "204": {
+            "description": "no content found, user has not liked any photos"
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "User Likes",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/log": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Log an error condition from the client",
+        "operationId": "log",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "log-info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/upload_log"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The data was logged"
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error uploading log!",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Log ClientEvent",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/newevent": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Create a category that is limited to invited users",
+        "operationId": "create_event",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "event-info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/create-event"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "event created",
+            "schema": {
+              "$ref": "#/definitions/eventdetails"
+            }
+          },
+          "400": {
+            "description": "error in specified arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Create Private Event",
+        "tags": [
+          "category"
+        ]
+      }
+    },
+    "/photo": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Upload a photo for the specified category",
+        "operationId": "photo",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "photo-info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/upload_photo"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of images to vote on for the category just uploaded to (if at least 50 images in category)",
+            "schema": {
+              "$ref": "#/definitions/CategoryBallots"
+            }
+          },
+          "201": {
+            "description": "The image was properly uploaded!",
+            "schema": {
+              "$ref": "#/definitions/filename"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error uploading image",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Upload Photo",
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "/photo/{cid}/{dir}/{pid}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "returns a list of photos in the specified category<br/>restricted usage, ImageImprov staff only!",
+        "operationId": "photo-list",
+        "parameters": [
+          {
+            "description": "The category id we are inspecting",
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "next/prev direction from specified photo id for next or previous page",
+            "enum": [
+              "next",
+              "prev"
+            ],
+            "in": "path",
+            "name": "dir",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "the photo id to start paging from",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "list of photos that are in this category",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/PhotoInfo"
+              },
+              "photos": null,
+              "type": "array"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error uploading image",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "List of Categories Photos",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/preview/{pid}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Download a watermarked thumbnail of a photo on the site.<br/>Can be used to display images as URLs",
+        "operationId": "preview-image",
+        "parameters": [
+          {
+            "description": "The id of the photo to be downloaded",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "image/jpeg"
+        ],
+        "responses": {
+          "200": {
+            "description": "image found"
+          },
+          "404": {
+            "description": "image not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "summary": "Preview Photo",
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "/register": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Register a user",
+        "operationId": "register",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "registration-info",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/register_user"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "account created"
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error creating account",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Register (Create new account)",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/resetpwd": {
+      "post": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Reset a user's password",
+        "operationId": "reset-password",
+        "parameters": [
+          {
+            "description": "a csrf token that uniquely identifies this activity",
+            "in": "query",
+            "name": "token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "The updated password",
+            "in": "query",
+            "name": "pwd",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "text/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "password reset, notification email set"
+          },
+          "403": {
+            "description": "token is invalid",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "summary": "Reset Password",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/setcategorystate": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Sets the category state to a specific value - testing only! User account must have admin privileges.",
+        "operationId": "set-category-state",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "arguments",
+            "schema": {
+              "$ref": "#/definitions/category_state"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "state changed"
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error operating on category id specified",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Set Category State",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/spec/swagger.json": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "A JSON formatted OpenAPI/Swagger document formatting the API",
+        "operationId": "get-specification",
+        "produces": [
+          "text/html"
+        ],
+        "responses": {
+          "200": {
+            "description": "look at our beautiful specification"
+          },
+          "500": {
+            "description": "serious error dude"
+          }
+        },
+        "summary": "Specification",
+        "tags": [
+          "admin"
+        ]
+      }
+    },
+    "/submissions/{dir}/{cid}": {
+      "get": {
+        "consumes": [
+          "text/html"
+        ],
+        "description": "Retrieve a pageable list of photos the user has submitted",
+        "operationId": "submission",
+        "parameters": [
+          {
+            "description": "next/prev direction from specified category id for next page",
+            "enum": [
+              "next",
+              "prev"
+            ],
+            "in": "path",
+            "name": "dir",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "category id to start fetch from, if 0 fetch around active categories",
+            "in": "path",
+            "name": "cid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "description": "The number of categories to fetch in a single call, if not specified all will be fetched",
+            "in": "query",
+            "name": "num_categories",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "page of submissions",
+            "schema": {
+              "$ref": "#/definitions/SubmissionResp"
+            }
+          },
+          "404": {
+            "description": "image not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "My Submissions",
+        "tags": [
+          "user"
+        ]
+      }
+    },
+    "/update/photo/{pid}": {
+      "put": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Update information associated with an image",
+        "operationId": "update-imagedata",
+        "parameters": [
+          {
+            "description": "The id of the photo whose data is to be updated",
+            "in": "path",
+            "name": "pid",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "photo-data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/upload_photometa"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "image information updated"
+          },
+          "404": {
+            "description": "image not found",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Update Photo Data",
+        "tags": [
+          "image"
+        ]
+      }
+    },
+    "/vote": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Cast votes for a ballot. Will return a ballot from a random category.",
+        "operationId": "cast-vote",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/vote_args"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "ballot of images user has voted on with originating category information",
+            "schema": {
+              "$ref": "#/definitions/CategoryBallots"
+            }
+          },
+          "400": {
+            "description": "missing required arguments",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "413": {
+            "description": "too many votes being tallied",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          },
+          "500": {
+            "description": "error creating ballot to return",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ],
+        "summary": "Cast Vote",
+        "tags": [
+          "voting"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "JWT": {
+      "in": "header",
+      "name": "access_token",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0"
+}

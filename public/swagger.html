@@ -1,0 +1,1233 @@
+<!doctype html>
+<html>
+  <head>
+    <title>ImageImprov API</title>
+    <style type="text/css">
+      body {
+	font-family: Trebuchet MS, sans-serif;
+	font-size: 15px;
+	color: #444;
+	margin-right: 24px;
+}
+
+h1	{
+	font-size: 25px;
+}
+h2	{
+	font-size: 20px;
+}
+h3	{
+	font-size: 16px;
+	font-weight: bold;
+}
+hr	{
+	height: 1px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+}
+
+.app-desc {
+  clear: both;
+  margin-left: 20px;
+}
+.param-name {
+  width: 100%;
+}
+.license-info {
+  margin-left: 20px;
+}
+
+.license-url {
+  margin-left: 20px;
+}
+
+.model {
+  margin: 0 0 0px 20px;
+}
+
+.method {
+  margin-left: 20px;
+}
+
+.method-notes	{
+	margin: 10px 0 20px 0;
+	font-size: 90%;
+	color: #555;
+}
+
+pre {
+  padding: 10px;
+  margin-bottom: 2px;
+}
+
+.http-method {
+ text-transform: uppercase;
+}
+
+pre.get {
+  background-color: #0f6ab4;
+}
+
+pre.post {
+  background-color: #10a54a;
+}
+
+pre.put {
+  background-color: #c5862b;
+}
+
+pre.delete {
+  background-color: #a41e22;
+}
+
+.huge	{
+	color: #fff;
+}
+
+pre.example {
+  background-color: #f3f3f3;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+code {
+  white-space: pre;
+}
+
+.nickname {
+  font-weight: bold;
+}
+
+.method-path {
+  font-size: 1.5em;
+  background-color: #0f6ab4;
+}
+
+.up {
+  float:right;
+}
+
+.parameter {
+  width: 500px;
+}
+
+.param {
+  width: 500px;
+  padding: 10px 0 0 20px;
+  font-weight: bold;
+}
+
+.param-desc {
+  width: 700px;
+  padding: 0 0 0 20px;
+  color: #777;
+}
+
+.param-type {
+  font-style: italic;
+}
+
+.param-enum-header {
+width: 700px;
+padding: 0 0 0 60px;
+color: #777;
+font-weight: bold;
+}
+
+.param-enum {
+width: 700px;
+padding: 0 0 0 80px;
+color: #777;
+font-style: italic;
+}
+
+.field-label {
+  padding: 0;
+  margin: 0;
+  clear: both;
+}
+
+.field-items	{
+	padding: 0 0 15px 0;
+	margin-bottom: 15px;
+}
+
+.return-type {
+  clear: both;
+  padding-bottom: 10px;
+}
+
+.param-header {
+  font-weight: bold;
+}
+
+.method-tags {
+  text-align: right;
+}
+
+.method-tag {
+  background: none repeat scroll 0% 0% #24A600;
+  border-radius: 3px;
+  padding: 2px 10px;
+  margin: 2px;
+  color: #FFF;
+  display: inline-block;
+  text-decoration: none;
+}
+
+    </style>
+  </head>
+  <body>
+  <h1>ImageImprov API</h1>
+    <div class="app-desc"><p>The first version of the ImageImprov API is purely designed to interact with the ImageImprov mobile clients. We are aiming for a secure interface that will implement our needed features in a simple programming model</p>
+<p>All endpoints are only accessible via https and are located at</p>
+<p><code>api.imageimprov.com</code></p>
+<p>Users do not need to provide any information in order to enjoy our service, we fully support anonymous registration &amp; play</p>
+<h2>Limits</h2>
+<p>We are currently only allowing a single photo upload per category per period the category is open for uploading</p>
+</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
+    <div class="app-desc">Version: 1.0.1</div>
+    <div class="app-desc">BasePath:</div>
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+    <ol>
+      <li>APIKey KeyParamName:access_token KeyInQuery:false KeyInHeader:true</li>
+    </ol>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Admin">Admin</a></h4>
+  <ul>
+  <li><a href="#getConfiguration"><code><span class="http-method">get</span> /config</code></a></li>
+  <li><a href="#getSpecification"><code><span class="http-method">get</span> /spec/swagger.json</code></a></li>
+  <li><a href="#log"><code><span class="http-method">post</span> /log</code></a></li>
+  <li><a href="#setCategoryState"><code><span class="http-method">post</span> /setcategorystate</code></a></li>
+  </ul>
+  <h4><a href="#Category">Category</a></h4>
+  <ul>
+  <li><a href="#getCategory"><code><span class="http-method">get</span> /category</code></a></li>
+  </ul>
+  <h4><a href="#Image">Image</a></h4>
+  <ul>
+  <li><a href="#imageDownload"><code><span class="http-method">get</span> /image</code></a></li>
+  <li><a href="#photo"><code><span class="http-method">post</span> /photo</code></a></li>
+  <li><a href="#previewImage"><code><span class="http-method">get</span> /preview/{pid}</code></a></li>
+  <li><a href="#uploadImage"><code><span class="http-method">post</span> /file/{cid}</code></a></li>
+  </ul>
+  <h4><a href="#User">User</a></h4>
+  <ul>
+  <li><a href="#acceptFriendship"><code><span class="http-method">post</span> /acceptfriendrequest</code></a></li>
+  <li><a href="#getLeaderboard"><code><span class="http-method">get</span> /leaderboard</code></a></li>
+  <li><a href="#jwtAuth"><code><span class="http-method">post</span> /auth</code></a></li>
+  <li><a href="#lastSubmission"><code><span class="http-method">get</span> /lastsubmission</code></a></li>
+  <li><a href="#register"><code><span class="http-method">post</span> /register</code></a></li>
+  <li><a href="#tellAFriend"><code><span class="http-method">post</span> /friendrequest</code></a></li>
+  </ul>
+  <h4><a href="#Voting">Voting</a></h4>
+  <ul>
+  <li><a href="#castVote"><code><span class="http-method">post</span> /vote</code></a></li>
+  <li><a href="#getBallot"><code><span class="http-method">get</span> /ballot</code></a></li>
+  </ul>
+
+  <h1><a name="Admin">Admin</a></h1>
+  <div class="method"><a name="getConfiguration"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /config</code></pre></div>
+    <div class="method-summary">Configuration (<span class="nickname">getConfiguration</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    everything is running well
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    serious error dude
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getSpecification"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /spec/swagger.json</code></pre></div>
+    <div class="method-summary">Specification (<span class="nickname">getSpecification</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    look at our beautiful specification
+        <a href="#"></a>
+    <h4 class="field-label">500</h4>
+    serious error dude
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="log"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /log</code></pre></div>
+    <div class="method-summary">Log ClientEvent (<span class="nickname">log</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">log-info <a href="#upload_log">upload_log</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    The data was logged
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error uploading log!
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="setCategoryState"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /setcategorystate</code></pre></div>
+    <div class="method-summary">Set Category State (<span class="nickname">setCategoryState</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">arguments <a href="#category_state">category_state</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    state changed
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error operating on category id specified
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Category">Category</a></h1>
+  <div class="method"><a name="getCategory"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /category</code></pre></div>
+    <div class="method-summary">Fetch Category (<span class="nickname">getCategory</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>text/plain</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#categories">categories</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>""</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    category list retrieved
+        <a href="#categories">categories</a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error retrieving categories
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Image">Image</a></h1>
+  <div class="method"><a name="imageDownload"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /image</code></pre></div>
+    <div class="method-summary">Image Download (<span class="nickname">imageDownload</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">filename (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The filename you wish to retrieve </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#download_image">download_image</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "image" : "image"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    image found
+        <a href="#download_image">download_image</a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    photo not found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="photo"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /photo</code></pre></div>
+    <div class="method-summary">Upload Photo (<span class="nickname">photo</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">photo-info <a href="#upload_photo">upload_photo</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of images to vote on for the category just uploaded to (if at least 50 images in category)
+        <a href="#"></a>
+    <h4 class="field-label">201</h4>
+    The image was properly uploaded!
+        <a href="#filename">filename</a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error uploading image
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="previewImage"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /preview/{pid}</code></pre></div>
+    <div class="method-summary">Preview Photo (<span class="nickname">previewImage</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">pid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The id of the photo to be downloaded </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#download_image">download_image</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>image/jpeg</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    image found
+        <a href="#download_image">download_image</a>
+    <h4 class="field-label">404</h4>
+    image not found
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="uploadImage"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /file/{cid}</code></pre></div>
+    <div class="method-summary">Upload file (<span class="nickname">uploadImage</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">cid (required)</div>
+
+      <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash; The id of the category to upload the file to </div>
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>image/jpeg</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#filename">filename</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: </div>
+    <pre class="example"><code></code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>text/html</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    The image was properly uploaded!
+        <a href="#filename">filename</a>
+    <h4 class="field-label">404</h4>
+    image not found
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="User">User</a></h1>
+  <div class="method"><a name="acceptFriendship"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /acceptfriendrequest</code></pre></div>
+    <div class="method-summary">Accept Friend Request (<span class="nickname">acceptFriendship</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#friendreq">friendreq</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    friendship updated
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error operating on category id specified
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getLeaderboard"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /leaderboard</code></pre></div>
+    <div class="method-summary">Get Leader Board (<span class="nickname">getLeaderboard</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">category_id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Category of the leaderboard being requested </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#scores">scores</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>""</code></pre>
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    leaderboard retrieved
+        <a href="#scores">scores</a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error getting categories
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="jwtAuth"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /auth</code></pre></div>
+    <div class="method-summary">JWT authentication (<span class="nickname">jwtAuth</span>)</div>
+    <div class="method-notes">JWT authentication</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">credentials <a href="#credentials">credentials</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>""</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    user authenticated
+        <a href="#"></a>
+    <h4 class="field-label">401</h4>
+    user authentication failed
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="lastSubmission"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /lastsubmission</code></pre></div>
+    <div class="method-summary">Get Last Submission (<span class="nickname">lastSubmission</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#category">category</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{ }</code></pre>
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    last submission found
+        <a href="#category">category</a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    photo not found
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="register"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /register</code></pre></div>
+    <div class="method-summary">Register (Create new account) (<span class="nickname">register</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">registration-info <a href="#register_user">register_user</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    account created
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error creating account
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="tellAFriend"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /friendrequest</code></pre></div>
+    <div class="method-summary">Issue Friendship Request (<span class="nickname">tellAFriend</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#req_a_friend">req_a_friend</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">201</h4>
+    Will notify friend
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error requesting friendship
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="Voting">Voting</a></h1>
+  <div class="method"><a name="castVote"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /vote</code></pre></div>
+    <div class="method-summary">Cast Vote (<span class="nickname">castVote</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="header">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">body <a href="#vote_args">vote_args</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    ballot of images user has voted on with originating category information
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">413</h4>
+    too many votes being tallied
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    error creating ballot to return
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getBallot"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /ballot</code></pre></div>
+    <div class="method-summary">Get Ballot() (<span class="nickname">getBallot</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">category_id (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; The category we want to vote on. If not specified, a random category will be returned. </div>
+    </div>  <!-- field-items -->
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    list of images to vote on with their originating category
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    missing required arguments
+        <a href="#Error">Error</a>
+    <h4 class="field-label">403</h4>
+    no such user
+        <a href="#Error">Error</a>
+    <h4 class="field-label">500</h4>
+    no ballot
+        <a href="#Error">Error</a>
+    <h4 class="field-label">default</h4>
+    unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#Ballot"><code>Ballot</code> - </a></li>
+    <li><a href="#Category"><code>Category</code> - </a></li>
+    <li><a href="#Error"><code>Error</code> - </a></li>
+    <li><a href="#ballotentry"><code>ballotentry</code> - </a></li>
+    <li><a href="#categories"><code>categories</code> - </a></li>
+    <li><a href="#category"><code>category</code> - Category</a></li>
+    <li><a href="#category_state"><code>category_state</code> - </a></li>
+    <li><a href="#credentials"><code>credentials</code> - </a></li>
+    <li><a href="#download_image"><code>download_image</code> - </a></li>
+    <li><a href="#filename"><code>filename</code> - </a></li>
+    <li><a href="#friendreq"><code>friendreq</code> - </a></li>
+    <li><a href="#ranking"><code>ranking</code> - </a></li>
+    <li><a href="#register_user"><code>register_user</code> - </a></li>
+    <li><a href="#req_a_friend"><code>req_a_friend</code> - </a></li>
+    <li><a href="#scores"><code>scores</code> - </a></li>
+    <li><a href="#upload_log"><code>upload_log</code> - </a></li>
+    <li><a href="#upload_photo"><code>upload_photo</code> - </a></li>
+    <li><a href="#vote_args"><code>vote_args</code> - </a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="Ballot"><code>Ballot</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">bid (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">iitags (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> list of pre-defined tags user can select from </div>
+<div class="param">image (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">orientation (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Category"><code>Category</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">description (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> A brief description of the category </div>
+<div class="param">end (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When the category ends and voting can begin </div>
+<div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> category identifier </div>
+<div class="param">round (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Which round of voting the category is in. </div>
+<div class="param">start (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> When the category starts and uploading can begin </div>
+<div class="param">state (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The current state of the category (VOTING, UPLOADING, CLOSED, etc.) </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">UPLOAD, VOTING, COUNTING, CLOSED</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="Error"><code>Error</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">msg (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> error message </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ballotentry"><code>ballotentry</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">bid (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> ballot identifier </div>
+<div class="param">iitags (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> array of tags user has selected for the image </div>
+<div class="param">like (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> if present, indicates user liked the image </div>
+<div class="param">offensive (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> If present, indicates user has found the image offensive </div>
+<div class="param">vote (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> ranking in ballot </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="categories"><code>categories</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="category"><code>category</code> - Category</a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="category_state"><code>category_state</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">category_id </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+<div class="param">state </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="credentials"><code>credentials</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+<div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="download_image"><code>download_image</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">image (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> base64 encoded image file </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="filename"><code>filename</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">filename (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="friendreq"><code>friendreq</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">request_id </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> identifier from friend request this is a response to </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ranking"><code>ranking</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">image (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> base64 encoded thumbnail image of entry </div>
+<div class="param">isfriend (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> if set, then this rank is for a friend of yours </div>
+<div class="param">orientation (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> EXIF orientation of the image </div>
+<div class="param">rank (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> overall rank in scoring </div>
+<div class="param">score (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> actual score for this rank </div>
+<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> username of member of this rank </div>
+<div class="param">you (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> if set, then this rank is yours </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="register_user"><code>register_user</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">guid </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> a UUID that uniquely identifies the user, in lieu of a username, this is their anonymous account handle </div>
+<div class="param">password </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> password to log in user, special rules for anonymous users </div>
+<div class="param">username </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> this is either a guid (anonymous registration) or an email address </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="req_a_friend"><code>req_a_friend</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">friend </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> email address of friend to send request to </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="scores"><code>scores</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="upload_log"><code>upload_log</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">msg </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> descriptive message of problem </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="upload_photo"><code>upload_photo</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">category_id </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> the category id of the current category accepting uploads </div>
+<div class="param">extension </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Extension/filetype of uploaded image </div>
+        <div class="param-enum-header">Enum:</div>
+        <div class="param-enum">JPEG, JPG</div>
+<div class="param">image </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Base64 encoded image </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="vote_args"><code>vote_args</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">votes </div><div class="param-desc"><span class="param-type"><a href="#ballotentry">array[ballotentry]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
