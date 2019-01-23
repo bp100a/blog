@@ -18,7 +18,8 @@ source:
   - icon: fa fa-github
     project: genesis
     account: PhotoIImprov
-    description: A set of RESTful web services (Python/Flask/SQLAlchemy) to support a mobile app venture (Image Improv). The mobile side was written in Xamarin and supported both iOS & Android. Hosted on Google Cloud (GCE) using Cloud SQL and Cloud Store. You can see the REST API specification <a href="http://harrycollins.us/swagger.html">here</a>
+    description: A set of RESTful web services (Python/Flask/SQLAlchemy) to support a mobile app venture (Image Improv). The mobile side was written in Xamarin and supported both iOS & Android. Hosted on Google Cloud (GCE) using Cloud SQL and Cloud Store.
+    url: /swagger.html
 
   - icon: fa fa-github
     project: FaultSim
