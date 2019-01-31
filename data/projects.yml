@@ -44,4 +44,4 @@ source:
   - icon: fa fa-github
     project: RaspberryPint-lite
     account: bp100a
-    description: Based on the taplist management codebase RaspberryPint, the -lite means a Javascript only implementation. The original RaspberryPint utilizes a database and a convoluted management interface. Now it's a simple json array. Added some data to lookup styles and SRM coloring as well. Can easily drive a monitor with a Raspberry Pi Zero.
+    description: Based on the taplist management codebase RaspberryPint, the -lite means a Javascript only implementation. The original RaspberryPint utilizes a database and a convoluted management interface. Now it's a simple json array. Added some data to lookup styles and SRM coloring as well. Can easily drive a monitor with a Raspberry Pi Zero. Also CI/CD using CircleCI directly deployed to Raspberry Pi near my keezer.
