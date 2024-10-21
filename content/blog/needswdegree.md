@@ -10,7 +10,7 @@ categories = [
 ]
 highlight = "true"
 +++
-##Why developers need a CS degree
+## Why developers need a CS degree
 Perhaps the most important part of my job at Netsoft was the identification and acquisition of talent. Finding high caliber people is hard, and particularly hard in Manhattan. Given the competition with the financial institutions for the top talent, there are days when I'd like to just give up.
 
 But all is not lost. One of the greatest recruiting tools I have at my disposal is that my company is a cool place to work. We are one of the few consulting shops that I know of that practices software engineering. We are not looking for coders, we are not looking for programmers, we are looking for Software Engineers.

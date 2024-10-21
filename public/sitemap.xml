@@ -1,120 +1,77 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/blog/hugoonwindows/</loc>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/machine_learning/</loc>
+    <lastmod>2019-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/development/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/development/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/python_threading/</loc>
+    <lastmod>2018-11-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/hugoonwindows/</loc>
     <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/ci-cd/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/hugo/</loc>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/windows/</loc>
+    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/3dprinting/</loc>
     <lastmod>2018-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/whyconsultants/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/ci-cd/</loc>
+    <lastmod>2018-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/whyconsultants/</loc>
     <lastmod>2017-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/startupeasy/</loc>
+  </url><url>
+    <loc>//localhost:1313/categories/projects/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/projects/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/startups/</loc>
     <lastmod>2015-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/firstjob/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/startupeasy/</loc>
+    <lastmod>2015-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/firstjob/</loc>
     <lastmod>2013-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/writingtools/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/writingtools/</loc>
     <lastmod>2012-02-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/code4fun/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/code4fun/</loc>
     <lastmod>2011-11-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/fizzbuzz/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/fizzbuzz/</loc>
     <lastmod>2010-12-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/blog/needswdegree/</loc>
+  </url><url>
+    <loc>//localhost:1313/blog/needswdegree/</loc>
     <lastmod>2009-03-01T00:00:00+00:00</lastmod>
   </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/development/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/development/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hugo/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/projects/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/projects/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/startups/</loc>
-    <lastmod>2015-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/windows/</loc>
-    <lastmod>2018-10-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
 </urlset>

@@ -1,4 +1,4 @@
-baseurl = ""
+baseURL = ""
 languageCode = "en-US"
 title = "Harry Collins"
 # Enable comments by entering your Disqus shortname
@@ -11,7 +11,7 @@ theme = "hugo-sustain"
   post = "/:year/:month/:day/:slug"
 
 [params]
-  avatar = "profile.png"
+  avatar = "img/avatar.png"
   author = "Harry Collins"
   description = "Musings of an Engineer"
 

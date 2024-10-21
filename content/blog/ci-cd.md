@@ -11,12 +11,12 @@ highlight: true
 
 I've been working on testing the boundaries of Continues Integration & Deployment with a simple project of my, the Alexa Jersey Beers Skill. 
 
-I first tried out Jenkins, a friend of mine had been using it for work so I figured it would be a good start. While Jenkins works, I found it cumbersome to work with and difficult to get GitHub integration fully working. The more I read about Jenkins, the more it appears it is dated and needs a major overhaul.
+I first tried out Jenkins, a friend of mine had been using it for work, so I figured it would be a good start. While Jenkins works, I found it cumbersome to work with and difficult to get GitHub integration fully working. The more I read about Jenkins, the more it appears it is dated and needs a major overhaul.
 
 I then tried GitLabs. I really like the simplicity in how they integrated with GitHub, all the SSH access keys are automatically created. But once again, I had a lot of issues getting GitLabs to hear the GitHub events when checkins occurred.
 
 ## CircleCI Baby!
-At this time I heard about CircleCI. Since I had two people I know using it in real production environments, I decided to give it a try. **CircleCI is awesome!
+At this time I heard about CircleCI. Since I had two people I know using it in real production environments, I decided to give it a try. **CircleCI** is awesome!
 
 First, CircleCI easily integrates with GitHub, just drop a .circleci folder in your projects root folder. Next, when you register your project with CircleCI you are given a skeletal config.yml file to place in the folder you just created, this is where CircleCI reads the instructions for how to build and deploy your project.
 
