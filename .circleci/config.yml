@@ -21,10 +21,10 @@ jobs:
             git rm themes/hugo-sustain
             git submodule sync
             git submodule update --init
-        - run:
-            name: display submodule files
-            command: |
-              ls -als themes/hugo-sustain
+      - run:
+          name: display submodule files
+          command: |
+            ls -als themes/hugo-sustain
       - run:
           name: new projects.html file
           command: |
