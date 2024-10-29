@@ -17,8 +17,8 @@ jobs:
       - run: 
           name: get submodule (theme)
           command: |
-            git submodule summary
-            git submodule update --init
+            git submodule
+            git submodule update --init --force
       - run:
           name: display submodule files
           command: |
