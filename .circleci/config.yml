@@ -17,9 +17,6 @@ jobs:
       - run: 
           name: get submodule (theme)
           command: |
-            git submodule deinit themes/hugo-sustain
-            git rm themes/hugo-sustain
-            git submodule sync
             git submodule update --init
       - run:
           name: display submodule files
