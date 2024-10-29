@@ -16,7 +16,10 @@ jobs:
       - checkout
       - run: 
           name: get submodule (theme)
-          command: git submodule update --init
+          command: |
+            git submodule deinit themes/hugo-sustain
+            git rm themes/hugo-sustain
+            git submodule update --init --recursive
       - run:
           name: new projects.html file
           command: |
