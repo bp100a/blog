@@ -10,11 +10,13 @@ highlight: true
 
 Growing up I always had a dog, and I really loved the companionship dogs provided.
 
-I didn't get back into having a dog until our children got a little older (6/4/2) and I wanted them to have that same experience I had growing up.  We selected a rough coated, tri-color Collie from a kennel in NJ and named him Shaggy.
+I didn't get back into having a dog until our children got a little older (6yr, 4yr & 2yr) and I wanted them to have that same experience I had growing up.  We selected a rough coated, tri-color Collie from a kennel in NJ and named him Shaggy.
 
 We had Shaggy for 13 years, which is a good run for collie. When Shaggy passed we started looking around for our next dog and ended up at "Meet the Breeds", an annual event sponsored by the American Kennel Club in New York city. There we discovered Bernese Mountain dogs, find a breeder and purchased a 2 year-old dog and named her Indiana (after the dog in Indiana Jones).
 
 Indiana was a timid dog and probably only barked 4 or 5 times in her life. As a companion to Indie we purchased a Pomeranian and named him Kirby. Indie was 95 lbs and Kirby was about 7 lbs, but they got along.
+
+![Kirby](/img/dogs/Kirby%20sitting%20proud.jpg "Kirby")
 
 Indie only lived to 8 years and died of cancer. She was a good dog.
 
@@ -29,6 +31,8 @@ Suki loved running! She also loved killing chipmunks and any other small mammal 
 Figuring that I had two hands so a second dog could go running with me, we started looking for another dog as a companion to Suki and we found Athena. Size and color-wise the dogs look very much alike, but personalities are completely different. Where Suki is a predator and not overly affectionate, Athena is more like "Courage the Cowardly Dog" and loves being with people. Athena can run, and even better, she can swim.
 
 All the dogs swim (Kirby is not a big fan so we got him a floaty), but Athena is a powerhouse in the water.
+
+![Athena](/img/dogs/Athena%20in%20Passaic.jpg "Athena in her element")
 
 # The Pandemic Effect and Noelle’s Arrival
 
