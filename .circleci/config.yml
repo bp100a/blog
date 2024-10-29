@@ -24,7 +24,7 @@ jobs:
       - run:
           name: display submodule files
           command: |
-            ls -als themes/hugo-sustain
+            ls -als
       - run:
           name: new projects.html file
           command: |
