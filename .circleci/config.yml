@@ -19,7 +19,8 @@ jobs:
           command: |
             git submodule deinit themes/hugo-sustain
             git rm themes/hugo-sustain
-            git submodule update --init --recursive
+            git submodule sync
+            git submodule update --init
       - run:
           name: new projects.html file
           command: |
