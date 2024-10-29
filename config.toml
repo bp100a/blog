@@ -22,11 +22,7 @@ theme = "hugo-sustain"
 [params.social]
   Github        = "bp100a"
   Email         = "hcollins@gmail.com"
-  Twitter       = "bp100a"
   LinkedIn      = "harryjcollins"
-  # Stackoverflow = "username"
-  # Medium        = "username"
-  # Telegram      = "username"
 
 ## Main Menu
 [[menu.main]]
@@ -44,3 +40,13 @@ theme = "hugo-sustain"
   identifier = "resume"
   weight = 300
   url = "/cv.pdf"
+[[menu.main]]
+name = "dogs"
+weight = 400
+identifier = "dogs"
+url = "/dogs/"
+[[menu.main]]
+name = "about"
+weight = 500
+identifier = "about"
+url = "/about/"
