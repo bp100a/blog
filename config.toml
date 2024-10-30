@@ -50,3 +50,8 @@ name = "about"
 weight = 500
 identifier = "about"
 url = "/about/"
+[[menu.main]]
+name = "whois"
+weight = 600
+identifier = "whois"
+url = "/harry_collins_poster.pdf"

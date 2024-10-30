@@ -19,6 +19,7 @@ Contact me by [email].
 [projects]: /projects
 [blog]: /blog
 [resume]: /cv.pdf
+[whois]: /harry_collins_poster.pdf
 [dogs]: /dogs
 [@username]: https://twitter.com/username
 [email]: mailto:email@example.com
