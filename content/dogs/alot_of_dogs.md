@@ -44,4 +44,11 @@ A Bernese Mountain dog puppy is an adorable thing, but they don't stay cute litt
 
 Now there were four dogs in the house, it was getting crowded and walking them became a logistical issue. I found the comfortable number of dogs to walk is 2, the maximum is 3, so Kirby didn't go on a lot of walks (not that he enjoyed them).
 
-And that's how we got to having four dogs. Next, how we got up to 6 dogs!
+And that's how we got to having four dogs. In case you didn't keep count, those four are (in age order):
+
+* Kirby (8lbs, Pomeranian)
+* Suki (30lbs mixed breed)
+* Athena (40lbs mixed breed)
+* Noelle (+100 lbs, Bernese Mountain Dog)
+ 
+Next, how we got up to 6 dogs!
