@@ -17,6 +17,7 @@ jobs:
       - run: 
           name: get submodule (theme)
           command: |
+            rm -r themes/*
             git submodule
             git submodule update --init --force
       - run:
