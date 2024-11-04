@@ -29,4 +29,5 @@ jobs:
 
       - name: Deploy
         run: |
+          sudo apt install sshpass
           sshpass -p {{ secrets.SSH_PWD }} scp ./public -r {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:{{ secrets.SSH_PORT }}/public_html
