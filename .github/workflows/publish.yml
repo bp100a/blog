@@ -32,6 +32,11 @@ jobs:
         run: hugo --minify
 
       - name: Deploy
+        env:
+          PWD: ${{ secrets.SSH_PWD }}
+          PORT: ${{ secrets.SSH_PORT }}
+          USER: ${{ secrets.SSH_USER }}
+          HOST: ${{ secrets.SSH_ADDRESS }}
         run: |
           sshpass -V
-          sshpass -p '{{ secrets.SSH_PWD }}' scp -P {{ secrets.SSH_PORT}} -r ./public {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:~/domains/dogs.harrycollins.tech/public_html
+          sshpass -p "%PWD%" scp -P %PORT% -r ./public %USER%@%HOST%:~/domains/dogs.harrycollins.tech/public_html
