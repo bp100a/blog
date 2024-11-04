@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Harry Collins</title>
-    <link>//localhost:1313/tags/</link>
+    <link>https://dogs.harrycollins.tech/tags/</link>
     <description>Recent content in Tags on Harry Collins</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dogs.harrycollins.tech/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Development</title>
-      <link>//localhost:1313/tags/development/</link>
+      <link>https://dogs.harrycollins.tech/tags/development/</link>
       <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/development/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>//localhost:1313/tags/hugo/</link>
+      <link>https://dogs.harrycollins.tech/tags/hugo/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/hugo/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>//localhost:1313/tags/windows/</link>
+      <link>https://dogs.harrycollins.tech/tags/windows/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/windows/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Dogs</title>
-      <link>//localhost:1313/tags/dogs/</link>
+      <link>https://dogs.harrycollins.tech/tags/dogs/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      <guid>//localhost:1313/tags/dogs/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/dogs/</guid>
       <description></description>
     </item>
     <item>
       <title>Projects</title>
-      <link>//localhost:1313/tags/projects/</link>
+      <link>https://dogs.harrycollins.tech/tags/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      <guid>//localhost:1313/tags/projects/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/projects/</guid>
       <description></description>
     </item>
     <item>
       <title>Tech</title>
-      <link>//localhost:1313/tags/tech/</link>
+      <link>https://dogs.harrycollins.tech/tags/tech/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      <guid>//localhost:1313/tags/tech/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/tech/</guid>
       <description></description>
     </item>
     <item>
       <title>Startups</title>
-      <link>//localhost:1313/tags/startups/</link>
+      <link>https://dogs.harrycollins.tech/tags/startups/</link>
       <pubDate>Thu, 13 Aug 2015 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/startups/</guid>
+      <guid>https://dogs.harrycollins.tech/tags/startups/</guid>
       <description></description>
     </item>
   </channel>

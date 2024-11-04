@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on Harry Collins</title>
-    <link>//localhost:1313/tags/development/</link>
+    <link>https://dogs.harrycollins.tech/tags/development/</link>
     <description>Recent content in Development on Harry Collins</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dogs.harrycollins.tech/tags/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Threading with Python</title>
-      <link>//localhost:1313/blog/python_threading/</link>
+      <link>https://dogs.harrycollins.tech/blog/python_threading/</link>
       <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/python_threading/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/python_threading/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m working on a hobby project that uses a Raspberry Pi to control a hardware photogrammetry setup. It takes about 15 seconds to pull a picture out of the camera (a Nikon Coolpix S3300) using the gphoto2 library. It takes another 15 seconds or so to upload the picture to a google drive (the images are about 4MB). This is a great application for partitioning the work between two threads as I can double the throughput of the system.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Getting Started with Hugo on Windows</title>
-      <link>//localhost:1313/blog/hugoonwindows/</link>
+      <link>https://dogs.harrycollins.tech/blog/hugoonwindows/</link>
       <pubDate>Sat, 20 Oct 2018 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/hugoonwindows/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/hugoonwindows/</guid>
       <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a lefty. This meant in high school when the gym teacher would demonstrate a technique for any sport, my instruction was basically &amp;ldquo;and if you&amp;rsquo;re lefthanded use the opposite hands&amp;rdquo;. Being a developer that likes to use Windows as my development platform feels a lot like those days. Most open source projects provide only cursory instructions on setting up their tools on Windows, and the amount of information out there in StackOverflow and other sites is similarly lacking. My guess is it&amp;rsquo;s 90% Linux, 8% Mac and 2% Windows.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why Use Consultants</title>
-      <link>//localhost:1313/blog/whyconsultants/</link>
+      <link>https://dogs.harrycollins.tech/blog/whyconsultants/</link>
       <pubDate>Thu, 21 Sep 2017 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/whyconsultants/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/whyconsultants/</guid>
       <description>&lt;h2 id=&#34;why-use-consultants&#34;&gt;Why Use Consultants?&lt;/h2&gt;&#xA;&lt;p&gt;This may seem like a strange question coming from someone who makes their living as a consultant, but why do companies use consultants? I think there are many answers to this question, but they can be summed up into a generic statement, when they need resources or expertise that they don&amp;rsquo;t have.&lt;/p&gt;&#xA;&lt;p&gt;I know what you are saying &amp;ldquo;Duh! You&amp;rsquo;re just stating the obvious&amp;rdquo;. So let me elaborate. Back in the day when I was founding startups (BluePoint, PointCast, PrizePoint/Uproar) I ran development departments, heck I did a lot of the development myself. I would never have envisioned a scenario where I would look outside my own team for technical expertise. If there was something we didn&amp;rsquo;t know, we learned it, that way we captured the knowledge within the team and created value as an organization. The one time that I did reach out to consultants, while anxiously preparing to bring our first website based on Microsoft&amp;rsquo;s relatively new ASP (yes the VBScript stuff!) online to service what we thought would be millions and millions of users, I tapped one of the big consulting firms to assuage my business partner&amp;rsquo;s concerns. What I got were half-dozen junior engineers that regurgitated MSDN articles from the web, there was no &amp;ldquo;ASP master&amp;rdquo; that I was looking for to be found, and every scrap of information they provided I had already seen myself. They couldn&amp;rsquo;t answer any of the questions I had, and it was clear they were clueless. This was all costing the company $200 per hour per consultant, and I wasn&amp;rsquo;t getting any value.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why your first job is very important</title>
-      <link>//localhost:1313/blog/firstjob/</link>
+      <link>https://dogs.harrycollins.tech/blog/firstjob/</link>
       <pubDate>Tue, 02 Apr 2013 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/firstjob/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/firstjob/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m a serial hobbyist. One hobby I particularly liked was bee keeping. The basic beehive that you see virtually everywhere throughout the world was created by a Minister in Ohio. The design works so well it has little changed over the years. There are removable sections that contain the combs that the bees build out and fill with honey. The key to getting the bees to build the combs exactly how you want them to, hence making the work of maintaining the hive and extracting the honey far easier, is to provide a template embedded with the hexagonal pattern that the bees product. This ensures that the bees will make combs in the manner you want them to.&lt;/p&gt;</description>
     </item>
     <item>
       <title>If you think about writing a tool on a project – write the tool!</title>
-      <link>//localhost:1313/blog/writingtools/</link>
+      <link>https://dogs.harrycollins.tech/blog/writingtools/</link>
       <pubDate>Sat, 25 Feb 2012 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/writingtools/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/writingtools/</guid>
       <description>&lt;p&gt;Every project has a point where the team or team lead contemplates whether writing some tools would help the project. By tools I mean custom software not directly related to the solution deliverable. Sometimes these tools assist in generating code that is used in the project, other times they are just analysis tools to help you parse through gigabytes of log files looking for issues. And a tool can be a script or any other programmatic doohickey you come up with to help you in your day-to-day job of creating great software.&lt;/p&gt;</description>
     </item>
     <item>
       <title>All good developers write code for fun</title>
-      <link>//localhost:1313/blog/code4fun/</link>
+      <link>https://dogs.harrycollins.tech/blog/code4fun/</link>
       <pubDate>Wed, 23 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/code4fun/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/code4fun/</guid>
       <description>&lt;p&gt;While looking for talent to help grow my consultant company, I went to a lot of career fairs. In my mind this is a great opportunity to meet budding developers fresh from their CS courses. The challenge I have (and all employers who come to these fairs) is how to differentiate the great developers from the masses. All the resumes look the same, and after a while all the students do as well. With potentially a hundred or more people to wade through, I only have a few minutes to size up a candidate and decide whether to invest the additional time of performing a phone interview or even bring them in.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fizz/Buzz Interview Question</title>
-      <link>//localhost:1313/blog/fizzbuzz/</link>
+      <link>https://dogs.harrycollins.tech/blog/fizzbuzz/</link>
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/fizzbuzz/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/fizzbuzz/</guid>
       <description>&lt;h2 id=&#34;the-fizz-buzz-interview-question&#34;&gt;&amp;ldquo;The Fizz Buzz&amp;rdquo; interview question&lt;/h2&gt;&#xA;&lt;p&gt;One of the hardest things about hiring people is determining who will be a good fit for the company. For development teams this can be narrowly defined as someone who can answer arcane questions regarding computer science. One the tests I have seen used by many companies is the infamous &amp;ldquo;Fizz Buzz&amp;rdquo; problem. This problem is basically defined as follows:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;If a number is divisible by 3 print out &amp;ldquo;Fizz&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;If a number is divisible by 5 print out &amp;ldquo;Buzz&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;If a number is divisible by both 3 and 5, print out &amp;ldquo;Fizz Buzz&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;If a number is not divisible by either 3 or 5, then print out the number&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;There are variations but you get the idea. So what the interviewer is looking for is two things, first that the code will actually implement the above steps correctly, and secondly that the code will do so with the minimal code depth.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Why developers need a CS degree</title>
-      <link>//localhost:1313/blog/needswdegree/</link>
+      <link>https://dogs.harrycollins.tech/blog/needswdegree/</link>
       <pubDate>Sun, 01 Mar 2009 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/blog/needswdegree/</guid>
+      <guid>https://dogs.harrycollins.tech/blog/needswdegree/</guid>
       <description>&lt;h2 id=&#34;why-developers-need-a-cs-degree&#34;&gt;Why developers need a CS degree&lt;/h2&gt;&#xA;&lt;p&gt;Perhaps the most important part of my job at Netsoft was the identification and acquisition of talent. Finding high caliber people is hard, and particularly hard in Manhattan. Given the competition with the financial institutions for the top talent, there are days when I&amp;rsquo;d like to just give up.&lt;/p&gt;&#xA;&lt;p&gt;But all is not lost. One of the greatest recruiting tools I have at my disposal is that my company is a cool place to work. We are one of the few consulting shops that I know of that practices software engineering. We are not looking for coders, we are not looking for programmers, we are looking for Software Engineers.&lt;/p&gt;</description>
     </item>
   </channel>

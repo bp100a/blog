@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Harry Collins</title>
-    <link>//localhost:1313/categories/projects/</link>
+    <link>https://dogs.harrycollins.tech/categories/projects/</link>
     <description>Recent content in Projects on Harry Collins</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
-    <atom:link href="//localhost:1313/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dogs.harrycollins.tech/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Projects</title>
-      <link>//localhost:1313/projects/</link>
+      <link>https://dogs.harrycollins.tech/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      <guid>//localhost:1313/projects/</guid>
+      <guid>https://dogs.harrycollins.tech/projects/</guid>
       <description></description>
     </item>
   </channel>
