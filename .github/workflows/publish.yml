@@ -34,4 +34,4 @@ jobs:
       - name: Deploy
         run: |
           sshpass -V
-          sshpass -p '{{ secrets.SSH_PWD }}' scp ./public -r -P {{ secrets.SSH_PORT}} {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:/public_html
+          sshpass -p '{{ secrets.SSH_PWD }}' scp -P {{ secrets.SSH_PORT}} -r ./public {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:~/domains/dogs.harrycollins.tech/public_html
