@@ -1,10 +1,16 @@
----
-author: "Harry Collins"
-date: 2024-10-30
-linktitle: dogs
-title: Peak Dog 
-highlight: true
----
++++
+title = "That's a lot of dogs"
+description = ""
+tags = [
+        "dogs",
+]
+date = "2024-10-29"
+categories = [
+    "Dogs",
+]
+highlight = "true"
++++
+
 
 # Peak Dog
 

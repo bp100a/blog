@@ -1,10 +1,15 @@
----
-author: "Harry Collins"
-date: 2024-11-04
-linktitle: dogs
-title: Mutts 
-highlight: true
----
++++
+title = "What are puppies made of?"
+description = ""
+tags = [
+        "dogs",
+]
+date = "2024-10-29"
+categories = [
+    "Dogs",
+]
+highlight = "true"
++++
 
 # What are dogs made of?
 

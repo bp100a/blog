@@ -1,11 +1,16 @@
----
-author: "Harry Collins"
-date: 2024-10-29
-linktitle: dogs
-title: How I accumulated so many dogs - 
-highlight: true
----
-
++++
+title = "How did you get so many dogs?"
+description = ""
+tags = [
+        "dogs",
+]
+date = "2024-10-29"
+categories = [
+    "Dogs",
+]
+highlight = "true"
++++
+#
 # A Tale of Two Dogs: The Beginning
 
 Growing up I always had a dog, and I really loved the companionship dogs provided.
