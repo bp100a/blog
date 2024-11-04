@@ -6,7 +6,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  deploy:
+    environment: 'Hostinger'
     permissions:
       contents: write
 
