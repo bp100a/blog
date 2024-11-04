@@ -7,11 +7,10 @@ permissions:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
     environment: 'Hostinger'
     permissions:
       contents: write
-
-    runs-on: ubuntu-latest
 
     steps:
       - name: Build blog site
@@ -35,4 +34,4 @@ jobs:
       - name: Deploy
         run: |
           sshpass -V
-          sshpass -p '{{ secrets.SSH_PWD }}' scp ./public -r {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:{{ secrets.SSH_PORT }}/public_html
+          sshpass -p '{{ secrets.SSH_PWD }}' scp ./public -r -P {{ secrets.SSH_PORT}} {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:/public_html
