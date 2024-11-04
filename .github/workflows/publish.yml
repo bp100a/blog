@@ -38,5 +38,4 @@ jobs:
           USER: ${{ secrets.SSH_USER }}
           HOST: ${{ secrets.SSH_ADDRESS }}
         run: |
-          sshpass -V
-          sshpass -p "$PWD" scp -P $PORT -r ./public $USER@$HOST:~/domains/dogs.harrycollins.tech/public_html
+          sshpass -p "$PWD" scp -v -P $PORT -r ./public $USER@$HOST:~/domains/dogs.harrycollins.tech/public_html
