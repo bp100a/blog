@@ -24,10 +24,14 @@ jobs:
           hugo-version: '0.136.2'
           # extended: true
 
+      - name: set base URL
+        run: |
+          sed -i 's/baseurl = \"\"/baseurl = \"https:\/\/dogs.harrycollins.tech\/\"/g' config.toml
+
       - name: Build
         run: hugo --minify
 
       - name: Deploy
         run: |
-          sudo apt-get install sshpass
+          sshpass -V
           sshpass -p {{ secrets.SSH_PWD }} scp ./public -r {{ secrets.SSH_USER}}@${{ secrets.SSH_ADDRESS }}:{{ secrets.SSH_PORT }}/public_html
