@@ -38,4 +38,4 @@ jobs:
           USER: ${{ secrets.SSH_USER }}
           HOST: ${{ secrets.SSH_ADDRESS }}
         run: |
-          sshpass -p "$PWD" scp -StrictHostKeyChecking=no -P $PORT -r ./public $USER@$HOST:~/domains/dogs.harrycollins.tech/public_html
+          sshpass -p "$PWD" scp -o StrictHostKeyChecking=no -P $PORT -r ./public $USER@$HOST:~/domains/dogs.harrycollins.tech/public_html
