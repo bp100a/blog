@@ -30,10 +30,24 @@
       <description></description>
     </item>
     <item>
+      <title>Dogs</title>
+      <link>//localhost:1313/tags/dogs/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <guid>//localhost:1313/tags/dogs/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Projects</title>
       <link>//localhost:1313/tags/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
       <guid>//localhost:1313/tags/projects/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech</title>
+      <link>//localhost:1313/tags/tech/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <guid>//localhost:1313/tags/tech/</guid>
       <description></description>
     </item>
     <item>

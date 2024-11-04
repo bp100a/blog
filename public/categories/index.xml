@@ -16,6 +16,20 @@
       <description></description>
     </item>
     <item>
+      <title>Blog</title>
+      <link>//localhost:1313/categories/blog/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <guid>//localhost:1313/categories/blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dogs</title>
+      <link>//localhost:1313/categories/dogs/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      <guid>//localhost:1313/categories/dogs/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Projects</title>
       <link>//localhost:1313/categories/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>

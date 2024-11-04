@@ -3,21 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>//localhost:1313/</loc>
-    <lastmod>2024-10-29T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/about/</loc>
+    <lastmod>2024-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/dogs/then_there_were_six/</loc>
+    <lastmod>2024-10-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/about/whois/</loc>
+    <lastmod>2024-10-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/about/about/</loc>
     <lastmod>2024-10-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
-    <lastmod>2024-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/blog/</loc>
-    <lastmod>2024-10-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>//localhost:1313/dogs/alot_of_dogs/</loc>
-    <lastmod>2024-10-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/dogs/</loc>
     <lastmod>2024-10-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>//localhost:1313/about/timeline/</loc>
@@ -62,6 +62,18 @@
     <loc>//localhost:1313/blog/whyconsultants/</loc>
     <lastmod>2017-09-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>//localhost:1313/categories/blog/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/dogs/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/categories/dogs/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/dogs/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/tags/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url><url>
@@ -69,6 +81,12 @@
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/projects/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/tags/tech/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/blog/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url><url>
     <loc>//localhost:1313/tags/startups/</loc>
